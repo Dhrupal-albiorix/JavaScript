@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <p>Function Expression</p>
+    <p>A function expression in JavaScript is a function that is stored as a value,
+        and can be assigned to a variable or passed as an argument to another function</p>
+
+    <a href="https://javascript.info/function-expressions#function-expression-vs-function-declaration">Must read</a>
+</body>
+
+</html>
+
+<script>
+
+    //Code for Function Expression (anonymous) 
+    var add = function (num1, num2) {
+        return num1 + num2;
+    };
+    var result = add(10, 20);//returns 30
+
+    //Code for Function Expression (named) 
+    let calMul = function Mul(x, y) {
+        let z = x * y;
+        return z;
+    }
+    console.log("Multiplication : " + calMul(7, 4));
+
+    //Code for Arrow Function 
+    let calDiv = (x, y) => {
+        let z = x / y;
+        return z;
+    }
+    console.log("Division : " + calDiv(24, 4));
+
+</script>

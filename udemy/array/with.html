@@ -1,0 +1,10 @@
+<script>
+    const arr = [1, 2, 3, 4, 5];
+    console.log(arr.with(2, 6)); // [1, 2, 6, 4, 5]
+    console.log(arr); // [1, 2, 3, 4, 5]
+
+    //Chaining array methods
+    const arr2 = [1, 2, 3, 4, 5];
+    console.log(arr2.with(2, 6).map((x) => x ** 2)); // [1, 4, 36, 16, 25]
+
+</script>

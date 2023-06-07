@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <a href="https://www.freecodecamp.org/news/coercion-and-type-conversion-in-javascript/">Free code camp</a>
+</body>
+
+</html>
+
+<script>
+    const string = ""
+    const number = 40
+    const boolean = true
+
+    console.log(!string)
+    // true - string is coerced to boolean `false`, then the NOT operator negates it
+
+    console.log(boolean + string)
+    // "true" - boolean is coerced to string "true", and concatenated with the empty string
+
+    // boolean + string will convert to whole as string
+    // boolean true will be string true : "true" and in right side string is already empty.
+    //so it will be "true"+" " and so output will be true
+
+    console.log(40 + true)
+    // 41 - boolean is coerced to number 1, and summed with 40
+
+    const variable1 = false // Boolean value as false
+    const variable2 = ""  // empty string value is false
+    console.log(variable1 == variable2) // compares only values
+// true
+
+</script>

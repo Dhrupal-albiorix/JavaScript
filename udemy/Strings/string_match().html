@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <p>match</p>
+</body>
+
+</html>
+<script>
+    const p = 'abcd  bbbsddg jjjbbdg';
+    const r = 'b';
+    const f = p.match(r);
+    console.log(f);
+    //  ['b', index: 1, input: 'abcd  bbbsddg jjjbbdg', groups: undefined]
+
+    // const paragraph = 'The quick brown fox jumps over the lazy dog. It barked.';
+    // const regex = /([A-Z])/g;
+    // // const regex = /([A-Z])/;
+    // const found = paragraph.match(regex);
+
+    // console.log(found); // ['T', 'I']
+    // The output['T', 'I'] in the example you provided does not include additional properties like index,
+    // input, and groups because the match() method behaves differently when used with the g(global) flag
+    // compared to when it is used without the g flag. When the g flag is used with match(),
+    // it returns an array of all the matches found in the string, without including any additional
+    // properties like index, input, and groups
+
+    const paragraph = 'John Doe: john.doe@example.com, Jane Smith: jane.smith@example.com';
+    const regex = /(?<email>\w+\.?\w+@\w+\.\w+)/g;
+    const found = paragraph.match(regex);
+
+    console.log(found.groups);
+
+
+</script>

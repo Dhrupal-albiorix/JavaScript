@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <p>object prototype</p>
+</body>
+
+</html>
+
+<script>
+    let student = {
+        name: "laalo",
+        school: "gurukul",
+        getInfo: function () {
+            return this.name + " &  " + this.school;
+        }
+    }
+    console.log(student.getInfo());
+
+    //getInfo method is commen in both of the object but it is using memory in both object..
+    //prototype will lead to store it once but use as per need
+
+    let student2 = {
+        name: "laalo2",
+        school: "gurukul",
+        getInfo: function () {
+            return this.name + " &  " + this.school;
+        }
+    }
+    console.log(student2.getInfo());
+
+    //---------------------------------------------prototype method-------------------------------------------------------
+
+    //store common method in one object 
+    let commenMethod = {
+        getData: function () {
+            return this.name + " &  " + this.school;
+        }
+    }
+
+    //create object which will use this method
+    let stu = {
+        name: "laalo_",
+        school: "gurukul",
+    }
+
+    let stu2 = {
+        name: "laalo_2",
+        school: "gurukul",
+    }
+    let stu3 = {
+        name: "laalo_3",
+        school: "gurukul",
+    }
+
+    stu._Proto_ = commenMethod;
+    console.log(commenMethod)
+</script>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <p>By string object (using new keyword)</p>
+    <p>The new String() method in JavaScript is used to create a new String object. While it can be used to create a
+        string, it
+        is not commonly recommended or necessary in most scenarios. In JavaScript, strings can be created simply by
+        using string
+        literals (e.g., "hello").
+
+        Here are some points to consider regarding the new String() method:
+
+        Object-oriented approach: The new String() method allows you to create a String object, which means you can
+        utilize
+        string-related properties and methods available on the String object prototype. However, for most string
+        operations,
+        using string literals is simpler and more common.
+
+        Immutability: String objects created with new String() are immutable, meaning their values cannot be changed
+        once they
+        are created. However, JavaScript automatically converts string literals into string objects when necessary,
+        allowing you
+        to access string methods on literals as well.
+
+        Type coercion: When using new String(), you are explicitly creating an object of type String. This can lead to
+        unexpected behavior when comparing or using the string in operations, as JavaScript performs type coercion to
+        convert
+        the String object back to a primitive string when needed. This can differ from the behavior of string literals,
+        which
+        are already primitive strings.
+
+        In most cases, using string literals ("hello") is sufficient and more convenient. String literals are
+        lightweight and
+        behave as expected in most operations. The new String() method is typically used in specific situations that
+        require
+        explicit String objects or when working with specific string-related methods available on the String object
+        prototype.
+    </p>
+</body>
+
+</html>
+
+<script>
+    var stringname = new String("hello javascript string");
+    console.log(typeof (stringname));
+    console.log(stringname);
+
+    let Str = "abdg"
+    console.log(stringname.valueOf())
+
+    const s1 = "2 + 2"; // creates a string primitive
+    const s2 = new String("2 + 2"); // creates a String object
+    console.log(eval(s1)); // returns the number 4
+    console.log(eval(s2)); // returns the string "2 + 2"
+    console.log(eval(s2.valueOf())); // returns the number 4
+</script>

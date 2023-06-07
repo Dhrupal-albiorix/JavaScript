@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div>
+        Comma operator
+        The comma operator (,) evaluates both of its operands and returns the value of the last operand. This operator
+        is
+        primarily used inside a for loop, to allow multiple variables to be updated each time through the loop. It is
+        regarded
+        bad style to use it elsewhere, when it is not necessary. Often two separate statements can and should be used
+        instead.
+        <br>
+        For example, if a is a 2-dimensional array with 10 elements on a side, the following code uses the comma
+        operator to
+        update two variables at once. The code prints the values of the diagonal elements in the array:
+        <br>
+        const x = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
+        <br>
+        const a = [x, x, x, x, x];
+        <br>
+        for (let i = 0, j = 9; i <= j; i++, j--) <br>
+            { // ^ console.log(`a[${i}][${j}]=${a[i][j]}`); }
+    </div>
+</body>
+
+</html>
+
+<script>
+
+    const x = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
+    const a = [x, x, x, x, x];
+    console.log(a)
+    for (let i = 0, j = 9; i <= j; i++, j--) {
+        console.log(`[${i}][${j}]=${a[i][j]}`);
+    }
+
+    console.log(" J'th element of i'th array in array a is consoled ")
+
+    let p = {
+        q: ""
+    }
+
+    console.log(p)
+
+    // comma opretor has Associativity from right to left
+    let a2 = (1, 2, 3)
+    let x2 = (y = 5, z = 6);
+
+    console.log(a2)    // 3
+    console.log(y)    // 5
+    console.log(z)    // 6
+    console.log(x2)    // 6
+
+</script>

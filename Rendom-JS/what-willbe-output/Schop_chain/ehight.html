@@ -1,0 +1,18 @@
+<script>
+    var x = 10;
+
+    function outer() {
+        var x = 20;
+
+        if (true) {
+            let x = 30;
+            console.log(x);
+        }
+
+        console.log(x);
+    }
+
+    outer(); // in if block : 30 , in outer if block 20
+    console.log(x); // 10
+
+</script>

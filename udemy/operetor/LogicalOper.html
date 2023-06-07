@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div>
+        <div>const a1 = true && true; // t && t returns true</div>
+        <div>const a2 = true && false; // t && f returns false</div>
+        <div>const a3 = false && true; // f && t returns false</div>
+        <div>const a4 = false && 3 === 4; // f && f returns false</div>
+
+        <div>const a5 = "Cat" && "Dog"; // t && t : returns Dog</div>
+        <div>const a6 = false && "Cat"; // f && t : returns false</div>
+        <div>const a7 = "Cat" && false; // t && f : returns false</div>
+
+        <div>&& operation will stop to go further when it it gets false value and it will return last value
+            it went to. If all were true it will return last and if get any false value then it will
+            stop there and return that false value</div>
+
+        <h3>in or (||) ..it stopes when it gets true value.</h3>
+    </div>
+</body>
+
+</html>
+
+<script>
+    console.log((2 == 2) && (2 == 3));
+    //as 2==2 is true
+    // 2==3 is false.
+    //&& stops when it gets false value or if no false then last true
+    // output will be false.
+
+    console.log((2 == 3) && (3 == 3));
+    // as frist turm 2==3 is false already
+    //&& will not go further and return false
+
+    console.log((3 == 3) && (3 == 3));
+    // as all are true it will stop at last and return last value i.e true
+
+    console.log((4 == 4) && (2 == 3) && (3 == 3));
+    // as secound turm 2==3 is false already
+    //&& will not go further and return false
+
+    console.log((2 == 3) || (2 == 2) || (4 == 8))
+    //as (||) ..it stopes when it gets true value
+    // secound turm is true and so || will stop there and return true
+</script>

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div>
+        In this code snippet, the variable `x` is declared and assigned a value of 10 outside the `test()` function.
+        Let's go
+        through the code step by step:
+        <br>
+
+        1. `var x = 10;`: The variable `x` is declared and assigned a value of 10 in the global scope.
+        <br>
+
+        2. `function test() { ... }`: The `test()` function is defined.
+        <br>
+
+        3. `console.log(x);`: The first `console.log` statement inside the `test()` function attempts to log the value
+        of `x`.
+        However, since there is a variable named `x` declared within the function scope, it shadows the global variable
+        `x`. bcx var is not block scop , it will ignore {} scop . (var has function and globle scop only , not block
+        scop)At
+        this point, the local variable `x` has not been assigned any value, so it is `undefined`. Therefore, the output
+        of this
+        statement will be `undefined`.
+        <br>
+
+        4. `if (x > 20) { var x = 50; }`: This `if` statement checks if the local variable `x` (which is still
+        `undefined`) is
+        greater than 20. Since the condition is not met, the code block inside the `if` statement is not executed.
+        <br>
+
+        5. `console.log(x);`: The second `console.log` statement inside the `test()` function attempts to log the value
+        of `x`.
+        At this point, the local variable `x` has not been assigned any value within the `test()` function. Therefore,
+        it
+        remains `undefined`. The output of this statement will also be `undefined`.
+        <br>
+
+        6. `test();`: Finally, the `test()` function is called, which triggers the execution of the code inside the
+        function.
+        <br>
+
+        So, the output of running this code will be:
+        <br>
+        ```
+        undefined
+        <br>
+        undefined
+        <br>
+        ```
+
+        Both `console.log` statements inside the `test()` function will output `undefined` because the local variable
+        `x`
+        shadows the global variable `x` and is not assigned any value before being logged.
+    </div>
+</body>
+
+</html>
+
+<script>
+
+    var x = 10;
+    function test() {
+        console.log(x) //undefine
+        if (x > 20) {
+            var x = 50;
+        }
+
+        console.log(x);
+    }
+    test();
+
+
+
+            // var x = 10;
+            // function test() {
+            //     console.log(x)
+            //     if (x > 20) {
+            //          x = 50; //do not reinitilize and all problem are solved , as now hoisting will not be repated.
+            //     }
+
+            //     console.log(x);
+            // }
+            // test();
+
+
+</script>

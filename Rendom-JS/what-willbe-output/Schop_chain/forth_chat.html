@@ -1,0 +1,21 @@
+<script>
+    function outer() {
+        var x = 10;
+
+        function middle() {
+            var y = 20;
+            console.log(x + y)
+
+            setTimeout(function inner() {
+                var z = 30;
+                console.log(x + y + z);
+            }, 1000);
+        }
+
+        middle();
+    }
+
+
+    outer();
+
+</script>

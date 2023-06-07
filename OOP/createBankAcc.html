@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <form id="accountForm">
+        <input type="text" placeholder="name" id="coustmorname">
+        <input type="number" name="initial balance" id="coustmorBalance">
+        <button type="submit">create account</button>
+    </form>
+
+    <!-- deposite form  -->
+
+    <form id="deposite">
+        <input type="Number" placeholder="accountnumber" id="accountnumber">
+        <input type="number" placeholder="Amount" id="amount">
+        <button type="submit">deposite</button>
+    </form>
+</body>
+
+</html>
+
+<script>
+    //constructor function  : 
+
+    function BankAccount(customerName, balance = 0) {
+
+        //constructor property 
+        this.customerName = customerName;
+        this.accountNumber = Date.now();
+        this.balance = balance;
+
+        //methods : 
+        this.deposite = function (amount) {
+            this.balance += amount;
+        }
+
+        this.withdraw = (amount) => {
+            this.balance -= amount
+        }
+
+    }
+
+    //create objects from constructor function...where each object will occupai its own memory
+    //all objects will ne indepandent of each other
+    let RakesAcc = new BankAccount("Rakesh", 10000);
+
+
+    //Dom-------------------------------------------------------
+
+    const Allaccounts = []
+
+    let accForm = document.querySelector('#accountForm')
+    let name = document.querySelector('#coustmorname')
+    let coustmorBalance = document.querySelector('#coustmorBalance')
+
+    let deposite = document.querySelector('#deposite')
+    let accountnumber = document.querySelector('#accountnumber')
+    let amount = document.querySelector('#amount')
+
+
+    accForm.addEventListener('submit', function (e) {
+        e.preventDefault();
+        // console.log(name.value);
+        // console.log(coustmorBalance.value)
+        const account = new BankAccount(name.value, +coustmorBalance.value)
+
+        Allaccounts.push(account);
+        console.log(Allaccounts);
+    })
+
+    deposite.addEventListener('submit', function (e) {
+        e.preventDefault();
+        const account = Allaccounts.find(
+            (account) => account.accountNumber === +accountnumber.value
+        );
+
+        account.deposite(+amount.value);
+        console.log(Allaccounts)
+    })
+
+
+
+</script>

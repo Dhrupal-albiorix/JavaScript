@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <a href="https://www.freecodecamp.org/news/javascript-lexical-scope-tutorial/">MUST READ</a>
+    <p>Lexical Scop</p>
+    <p>What is Lexical Scope in JavaScript?
+        <br>
+        Lexical scope is the definition area of an expression.
+        <br>
+
+        In other words, an item's lexical scope is the place in which the item got created.
+        <br>
+
+        Note:
+
+        Another name for lexical scope is static scope.
+        <br>
+        The place an item got invoked (or called) is not necessarily the item's lexical scope. Instead, an item's
+        definition
+</body>
+
+</html>
+
+<script>
+    let a = "hello"
+
+    function frist() {
+        var b = "how are u ? "
+
+        // secound();
+
+        return function secound() {
+            var c = "i am abcd"
+            //inner function can access value from outer / parent function : concept of scop chain
+            console.log(a, b, c)
+
+        }
+
+    }
+
+    //  frist()
+    frist()();
+</script>

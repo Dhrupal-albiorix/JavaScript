@@ -1,0 +1,29 @@
+<script>
+    //create object 
+    let person = {
+        name: "xyz",
+        native: "abc",
+        year: 1999,
+        age: function () {
+            console.log(this) //whole object
+            return 2033 - this.year
+        }
+    }
+
+    console.log(person.age())
+
+    //this keyword inside the function in the object refers to object that is containing that function
+    //by using function inside object and this key word inside that function will will get that object it self
+    //same thing is not possible for normal function i.e function that are not in object
+    //that norml function will result in window object and in strict mode it will be undefine
+
+    function myFun() {
+        function name() {
+            console.log(this)
+        }
+        return name();
+    }
+
+    myFun();
+
+</script>

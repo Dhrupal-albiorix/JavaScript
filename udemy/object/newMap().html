@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <a href="https://youtu.be/CPXf8Yv3I0A">Must watch </a>
+    <p>we can access only string key in normal object but in map object we can access any kind of key</p>
+    <ul>error with objects :
+        <li>using for of</li>
+        <li>using map</li>
+        <li>using for each</li>
+    </ul>
+    <ul>error with MAP objects :
+        <li>using map</li>
+    </ul>
+</body>
+
+</html>
+
+<script>
+    let data = new Map([
+        ['name', 'peter'],
+        [true, 'this is bool key'],
+        [1, 'this is number key']
+    ]);
+
+    console.log(data.get("name"));
+    console.log(data.get(true));
+    console.log(data.get(1));
+
+    data.set('key1', 'value1');
+    console.log(data.get('key1'));
+
+    console.log(data.size, "size");
+
+    for (let [key, value] of data) {
+        console.log(key + ' = ' + value);
+    }
+
+    data.forEach(item => {
+        console.log(item, "-----> using for each")
+    })
+
+    // map() will give you TypeError: data.map is not a function:
+    // data.map(item => {
+    //     console.log(item, "using map")
+    // })
+
+
+
+    let obj = {
+        name: "abcd",
+        school: "xyz"
+    }
+
+    // for..of will give you TypeError in obj : items are not iterable:
+    // for (let [key, value] of obj) {
+    //     console.log(key + ' = ' + value);
+    // }
+
+    // map() will give you TypeError: items.map is not a function:
+    //         obj.map(item => { })
+
+    //forEach() will give you TypeError: items.forEach is not a function:
+    // obj.forEach(item => {
+    //     console.log(item)
+    // })
+</script>

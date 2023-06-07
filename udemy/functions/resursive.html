@@ -1,0 +1,16 @@
+<script>
+    // A recursive function is a function that calls itself until it doesn’t.And this technique is called recursion.
+    // A recursive function always has a condition to stop calling itself.Otherwise, 
+    // it will call itself indefinitely.So a recursive function typically looks like the following:
+
+    function countDown(fromNumber) {
+        console.log(fromNumber);
+
+        let nextNumber = fromNumber - 1;
+
+        if (nextNumber > 0) {
+            countDown(nextNumber);
+        }
+    }
+    countDown(3);
+</script>

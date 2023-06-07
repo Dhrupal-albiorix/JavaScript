@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <p>string methods</p>
+
+    <p>All methods</p>
+    <p>String length Property
+        <br>
+        lastIndexOf() It provides the position of a char value present in the given string by searching a character from
+        the last
+        position.
+        <br>
+        indexOf() It provides the position of a char value present in the given string.
+        <br>
+        search() It searches a specified regular expression in a given string and returns its position if a match
+        occurs.
+        <br>
+        match() It searches a specified regular expression in a given string and returns that regular expression if a
+        match
+        occurs.
+        <br>
+        String slice() Method
+        <br>
+        String substring() Method
+        <br>
+        String substr() Method
+        <br>
+        String replace() Method
+        <br>
+        String replaceAll() Method
+        <br>
+        String toUpperCase() Method
+        <br>
+        String toLowerCase() Method
+        <br>
+        concat() It provides a combination of two or more strings.
+        <br>
+        The JavaScript String trim() method removes leading and trailing whitespaces from the string.
+        <br>
+        String trimStart() Method
+        <br>
+        String trimEnd() Method
+        <br>
+        String padStart() Method
+        <br>
+        String padEnd() Method
+        <br>
+        String charAt() Method
+        <br>
+        String charCodeAt() Method
+        <br>
+        String split() Method
+        <br>
+        toString() It provides a string representing the particular object.
+        <br>
+        valueOf() It provides the primitive value of string object.
+    </p>
+</body>
+
+</html>
+
+<script>
+    let myString = "this_is string...in string white space also counts"
+    console.log("normal string : ", myString);
+    console.log("string length : ", myString.length)
+    console.log(" string slice syntex -> slice(startIndex, endIndex) : ", myString.slice(2, 5))
+    console.log(" string slice syntex (-ve args) -> slice(-startIndex, -endIndex) : ", myString.slice(-5, -1))
+    console.log(" string substring syntex (dose not allow args) -> sunstring(startIndex, endIndex) : ", myString.substring(2, 5))
+    console.log("substr(start, length) Method: ", myString.substr(3, 5));
+    console.log("JavaScript replace(replaceValue, replaceWithValue) it gives another string")
+    let replaced_str = myString.replace("this_is", "this is")
+    console.log("another string with replace method : ", replaced_str);
+    console.log("JavaScript replaceAll(regexp | substr , newSubstr | function) Method: This method returns a new string after replacing all the matches of a string with a specified string or a regular expression. The original string is left unchanged after this operation.")
+    let ReplaceAll_str_ex = myString.replaceAll("i", "I");
+    console.log("ReplaceAll_str(i , I)", ReplaceAll_str_ex);
+
+
+
+</script>

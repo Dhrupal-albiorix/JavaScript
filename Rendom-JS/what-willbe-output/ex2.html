@@ -1,0 +1,218 @@
+<script>
+
+    ////////////////////////////////////////////////////////////////////
+
+    // let arr = [{
+    //         name: "abc xyz",
+    //         age: 55
+    //     },
+    //     {
+    //         name: "pqr oop",
+    //         age: 19
+    //     },
+    //     {
+    //         name: "pqr2 oop2",
+    //         age: 10
+    //     },
+    //     {
+    //         name: "pqr3 oop3",
+    //         age: 30
+    //     },
+    //     ]
+
+    //     const result = arr.filter(function checkAgeandName(obj) {
+    //         let a = obj
+    //         a.fname = obj.name.split(' ')[0];
+    //         a.lname = obj.name.split(' ')[1];
+    //         delete a.name
+    //         return (a.age % 2 === 0);
+    //     });
+
+
+
+    //     // console.log(arr)
+    //     console.log(result);
+
+    ///////////////////////////////////////////////////////////////////////////
+
+    // let arr = [{
+    //         name: "abc xyz",
+    //         age: 55
+    //     },
+    //     {
+    //         name: "pqr oop",
+    //         age: 19
+    //     },
+    //     {
+    //         name: "pqr2 oop2",
+    //         age: 10
+    //     },
+    //     {
+    //         name: "pqr3 oop3",
+    //         age: 30
+    //     },
+    //     ]
+
+
+
+    //     const result = arr.filter(function checkAge(obj) {
+    //         return (obj.age % 2 == 0)
+    //     }).map(function checkAgeandName(obj) {
+    //         let a = { ...obj }
+    //         a.fname = obj.name.split(' ')[0];
+    //         a.lname = obj.name.split(' ')[1];
+    //         delete a.name;
+    //         if (a.age % 2 === 0) {
+    //             return (a);
+    //         }
+
+    //     });
+
+    //     console.log(result);
+    //     console.log(arr)
+
+
+    //////////////////////////////////////////////////////////////////////////////////////////////////
+
+    let arr = [{
+        name: "abc xyz",
+        age: 55
+    },
+    {
+        name: "pqr oop",
+        age: 19
+    },
+    {
+        name: "pqr2 oop2",
+        age: 10
+    },
+    {
+        name: "pqr3 oop3",
+        age: 30
+    },
+    ]
+
+
+
+    const result = arr.reduce((total, value, index, array) => {
+        if (value.age % 2 == 0) {
+            let p = { ...value }
+            total.push(p)
+            p.fname = value.name.split(' ')[0]
+            p.lname = value.name.split(' ')[1]
+            delete p.name
+        }
+        return total
+    }, [])
+
+    console.log(arr)
+    console.log(result)
+
+    ////////////////////////////////////
+    //  let arr = ["dhrupal", "kirti", "adarsh", "kirti", "dhara", "kirti", "dhara"]
+
+    //     function findAllIndex(array, element) {
+    //         indices = [];
+    //         let currentIndex = array.indexOf(element);
+    //         while (currentIndex != -1) {
+    //             indices.push(currentIndex);
+    //             currentIndex = array.indexOf(element, currentIndex + 1);
+    //         }
+    //         return indices;
+    //     }
+
+    //     let occurance1 = findAllIndex(arr, "kirti");
+
+
+    //     if (occurance1.length > 1) {
+    //         arr[occurance1[1]] = "abcd"
+    //     }
+
+    //     console.log(arr)
+
+    ///////////////////////////////////////////////////////////////////////
+
+    // let arr = ["dhrupal", "kirti", "adarsh", "kirti", "dhara", "kirti", "dhara"];
+    //     let arr2 = []
+    //     arr.findIndex(function callbackFn(name, index) {
+    //         if (this == name) {
+    //             arr2.push(index)
+    //         }
+    //     }, "kirti")
+
+    //     arr[arr2[1]] = "abcd"
+    //     console.log(arr)
+    ////////////////////////////////////////////////////////
+
+    const names = ["amish", "Krati", "amish", "Krati"]
+
+    let index = -1
+    const input = 'amish'
+    const secondIndex = names.findIndex((e, i) => {
+        if (e === input && index !== -1) {
+            return i
+        } else {
+            index = i
+        }
+    })
+
+    console.log("secondIndex", secondIndex)
+    if (secondIndex !== -1) {
+        names.splice(secondIndex, 1, "Krati")
+    }
+
+    console.log("names", names)
+
+        /////////////////////////////////////////////////////////////////////////////
+
+        // let arr = [{
+        //         name: "abc xyz",
+        //         age: 55
+        //     },
+        //     {
+        //         name: "pqr oop",
+        //         age: 19
+        //     },
+        //     {
+        //         name: "abc xyz",
+        //         age: 10
+        //     },
+        //     {
+        //         name: "abc xyz",
+        //         age: 13
+        //     },
+        //     {
+        //         name: "pqr3 oop3",
+        //         age: 30
+        //     },
+        //     ]
+        //     let arr2 = []
+        //     arr.find(function callbackFn(obj, index) {
+        //         if (obj.name == "abc xyz") {
+        //             arr2.push(index)
+        //         }
+        //     })
+        //     arr[arr2[1]].name = "abcd"
+        //     console.log(arr)
+//////////////////////////////////////////////////////////////////////////////////
+        // const arr = [
+        //         "kirti",
+        //         "amish",
+        //         "dhrupal",
+        //         "amish",
+        //         "aadarsh",
+        //         "pisu",
+        //         "amish",
+        //         "kirti",
+        //     ];
+        //     const repeatedElements = {};
+        //     const replacedArr = arr.map((element) => {
+        //         if (!repeatedElements[element]) {
+        //             repeatedElements[element] = true;
+        //             return element;
+        //         }
+        //         return "abcd";
+        //     });
+        //     console.log(replacedArr);
+
+</script>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+
+</html>
+
+<script>
+    //store single string
+    localStorage.setItem("tech", "JavaScript");
+    let techStack = localStorage.getItem("tech");
+    console.log(techStack);
+
+    //storing object
+    let person = {
+        name: "John",
+        age: 22
+    };
+
+    localStorage.setItem("profile", person);
+
+    console.log(localStorage.getItem("profile")); //[object Object]
+
+    localStorage.setItem("profile", JSON.stringify(person)); //creating string
+    let storageProfileString = localStorage.getItem("profile");
+    console.log("String saved in LocalStorage", storageProfileString); //{"name":"John","age":22} //string 
+
+    let savedPerson = JSON.parse(storageProfileString); //getting in object 
+    console.log("Person object:", savedPerson);//{name: 'John', age: 22} //object
+    console.log("Person's name:", savedPerson.name);
+</script>

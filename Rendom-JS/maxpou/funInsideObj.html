@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h6>
+        The previous code return undefined. Why? Looks, on the first let condition, we define an object with 2
+        attributes (name
+        and the function sayName()). Then on the second let, we have sayName2 which is a function into
+        another
+        variable. And then, we call this variable out of her context (in the global one).
+        <br>
+        as dog.sayName has its object contex but we are calling it in globle contex by storing object in varable outside
+        object
+        <br>
+        The function sayName() will
+        return
+        window.name (global if the environment is Node). And typeof window.name === "undefined".
+    </h6>
+</body>
+
+</html>
+
+<script>
+    let dog = {
+        name: 'doggo',
+        sayName() {
+            return this.name
+        },
+    }
+
+    console.log(dog.sayName(), "calling directly from object");
+
+    let sayName2 = dog.sayName
+    console.log(sayName2(), "calling after storing object function in to variable")//undefine
+</script>

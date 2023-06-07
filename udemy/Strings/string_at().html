@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <p>JavaScript Demo: String.at()</p>
+    <p>JavaScript Demo: String.includes()</p>
+    <p>for (const str of strings) {
+        console.log(str.isWellFormed());
+        }</p>
+</body>
+
+</html>
+
+<script>
+    let str = "this is my str ..this string is normal";
+    let a = "th";
+
+    let index = 1;
+    console.log(str.at(index));
+    let index2 = -2;
+    console.log(str.at(index2))
+
+    console.log(str.includes(a)) //true
+
+    for (const s of str) {
+        console.log(s, ":", s.isWellFormed());
+    }
+</script>

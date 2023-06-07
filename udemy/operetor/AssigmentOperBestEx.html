@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <p>console</p>
+</body>
+
+</html>
+
+<script>
+    function f() {
+        console.log("F!");
+        return 2;
+    }
+    function g() {
+        console.log("G!");
+        return 3;
+    }
+
+    let x, y, x2, y2, x3;
+
+    y = x = f();//x nd y is assigned to value 2
+    console.log("value of frist expression", y)
+
+    y2 = [f(), x2 = g()];
+    console.log('value of secound expression', y2)
+
+    // console.log("value of third expression", x3[f()] = g())
+    // err: AssigmentOperBestEx.html:73 Uncaught TypeError: 
+    // Cannot set properties of undefined (setting '2')
+    //x3[f()] as f() is 2 we can say x3[2] ; 
+    // x3 has no value stored in so let x3 without assigning any value is undefine
+    //so we can't do anything with x3
+
+    console.log("value of third expression", x[f()] = g())
+    //as in frist expression x assigned to value 2 it can now be used as object
+    // so we can say x[2]=g()
+    //x[2]=3
+//    That 3 is now assigned to x[2]. (This step will succeed only if x is assigned to an object.
+
+    // let p;
+    // p[2] = 3
+    // console.log(p[2]);
+
+    let p = 5;
+    p[2] = 6
+    console.log(p[2])
+    // undefine
+    console.log(p[2] = 6)
+    //6
+</script>

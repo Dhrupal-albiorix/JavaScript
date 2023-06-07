@@ -1,0 +1,19 @@
+<script>
+    function cutComment(line) {
+        const commentIndex = line.indexOf('//');
+
+        if (commentIndex !== -1) {
+            const comment = line.substring(commentIndex + 2).trim();
+            return comment.length > 0 ? comment : null;
+        }
+
+        return null;
+    }
+
+    console.log(cutComment('let foo; // bar'));      // Output: "bar"
+    console.log(cutComment('let x = 42;'));         // Output: null
+    console.log(cutComment('console.log("hello");')); // Output: null
+    console.log(cutComment('const y = 10; // baz')); // Output: "baz"
+
+
+</script>

@@ -1,0 +1,38 @@
+<script>
+    const call = {
+        caller: "mom",
+        says: function () {
+            console.log(`Hey, ${this.caller} just called.`);
+        }
+    };
+
+    call.says(); //mom called 
+    let newCall = call.says;
+    newCall(); //undefine called you
+
+    //     Here, we declare a new variable, newCall, and assign the says function inside the call object 
+    //     to newCall.And then we invoke newCall, which is a now simple function call.
+
+    // Notice where we invoke the function. Is it inside the call object ? 
+    // No.We are invoking newCall() function globally, 
+    // which in turn makes the 'this' keyword equal to the global object.
+
+
+    ///////////////////////////////////////////////////////////////////
+
+    function fun() {
+        console.log("normal fun")
+    }
+
+    const fun2 = fun;
+    fun2(); // normal fun
+
+    /////////////////////////////////////////////////////////////////////////
+    const myFun = () => {
+        console.log("normal aerrow function")
+    }
+
+    let newFun = myFun;
+    newFun(); //function call
+
+</script>

@@ -1,0 +1,30 @@
+<script>
+    class BanckAcc {
+
+        name = "user1";
+        location = "near xyz";
+        #pin = "i am privet property" //only accessable inside class
+        #code = "547898"
+        getInfo() {
+            return this.name
+        }
+
+        #getPrivetProperty() {  // privet function ---- same as pin
+            return this.location
+        }
+
+        getCode() {  //accessing via inside class
+            return {
+                name: "u1",
+                code: this.#code
+            }
+        }
+
+    }
+
+    const detail = new BanckAcc();
+    console.log(detail.name)
+    console.log(detail.pin)//privet property will be undefine here in outer spcae of class
+    console.log(detail.getPrivetProperty)//privet property will be undefine here in outer spcae of class
+    console.log(detail.getCode(), "privet property accessable")//accessable
+</script>

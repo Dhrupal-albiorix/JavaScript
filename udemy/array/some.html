@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <p>Array.prototype.some(): This is in a way opposite to Array.every(). This function is used when you need to check
+        if at
+        least one element of a given array passes the test implemented by the callback function. Array.some() accepts a
+        callback
+        function as an argument which has to return either a true or false. The callback function is called for each
+        element of
+        the array until it returns true for at least one element of the array. If neither of the elements in the array
+        passes
+        the test of the callback function, it returns false.</p>
+        <div><b>One of the common mistakes programmers do while using array functions like Array.every() and
+                Array.some() is that they
+                forget the return the value in the callback function. Mind it, if you don’t return any value from
+                the callback function,
+                null is returned which will be interpreted as false. Also, it is important to know that these array
+                functions were
+                introduced in ECMAScript 5. So these functions are supported in IE9 or higher.</b></div>
+</body>
+
+</html>
+
+<script>
+    //normal method
+    // function fnIsGreaterThan100_loop(arr) {
+    //     for (var i = 0; i < arr.length; i++) {
+    //         if (arr[i] > 100) {
+    //             return true; //as soon as it finds one true element it will return true.
+    //         }
+    //     }
+    //     return false;
+    // }
+
+    // console.log(fnIsGreaterThan100_loop([0, 60, 90, 120]));
+    // console.log(fnIsGreaterThan100_loop([30, 60, 90]));
+
+    //some method : 
+
+    function fnIsGreaterThan100_some(arr) {
+        return arr.some(function (element) {
+            return (element > 100);
+        });
+    }
+    console.log(fnIsGreaterThan100_some([30, 60, 90, 120]));
+    console.log(fnIsGreaterThan100_some([30, 60, 90]));
+
+    let even = [10, 2, 31];
+    let numberType = even.some(function (nums) {
+        return ((nums === 2)) //as one element is 2 in array it will return true
+    })
+    console.log(numberType)
+
+
+
+</script>

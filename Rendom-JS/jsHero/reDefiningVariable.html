@@ -1,0 +1,16 @@
+<script>
+    let name1 = 'Olga';
+    let name2 = name1;
+    name1 = 'Clara';
+    console.log(name1, name2);        //Clara Olga
+
+    let x = 'Laurel';
+    let y = 'Hardy';
+    let z = y; //Hardy
+    console.log(x, y, z)//Laurel Hardy Hardy
+    y = x;//Laurel
+    x = z;//Hardy
+
+    console.log(x, y, z) //hardy , laurel , hardy
+</script>
+

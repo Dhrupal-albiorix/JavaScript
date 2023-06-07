@@ -1,0 +1,22 @@
+<script>
+    function outer() {
+        var x = 10;
+
+        function middle() {
+            var y = 20;
+
+            return function inner(z) {
+                console.log(x + y + z);
+            };
+        }
+
+        var innerFn1 = middle();
+        var innerFn2 = middle();
+
+        innerFn1(5); //35
+        innerFn2(15); //45
+    }
+
+    outer();
+
+</script>

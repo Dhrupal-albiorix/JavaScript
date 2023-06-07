@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h3>all functions are frist class function bcz sometimes we do not use functions like variable or return inside
+        another function but that function still has captity to do so.
+    </h3>
+    <div>
+        A programming language is said to have First-class functions when functions in that language are treated like
+        any other
+        variable. For example, in such a language, a function can be passed as an argument to other functions, can be
+        returned
+        by another function and can be assigned as a value to a variable.
+    </div>
+</body>
+
+</html>
+
+<script>
+    function sayHello() {
+        return "Hello, ";
+    }
+    function greeting(helloMessage, name) { //Passing a function as an argument
+        console.log(helloMessage() + name);
+    }
+    // Pass `sayHello` as an argument to `greeting` function
+    greeting(sayHello, "JavaScript!");
+    // Hello, JavaScript!
+
+
+    function sayHello2() {
+        return () => {
+            console.log("Hello!");
+        };
+    }
+    sayHello2();
+
+</script>

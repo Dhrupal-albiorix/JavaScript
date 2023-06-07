@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div>
+        Array.prototype.every(): This function is used when you need to validate each element of a given array. It
+        accepts a
+        callback function as an argument which is called for each element of the array. The callback function has to
+        return
+        either true or false. If all elements of the array satisfy the validation function and thus the callback
+        function
+        returns true on all elements of the array, then it returns true. Otherwise, it returns false, as soon as it
+        encounters
+        the first element which does not satisfy the validator function.
+    </div>
+    <p>Syntax:
+
+    <p>let result = numbers.every(function(element){
+        return(element < 100); });</p>
+
+            <p>numbers is original array</p>
+            <p>.every is method</p>
+            <p>function(element) is callback which chackes condition that if all elements are grater then 100 </p>
+
+            <div><b>One of the common mistakes programmers do while using array functions like Array.every() and
+                    Array.some() is that they
+                    forget the return the value in the callback function. Mind it, if you don’t return any value from
+                    the callback function,
+                    null is returned which will be interpreted as false. Also, it is important to know that these array
+                    functions were
+                    introduced in ECMAScript 5. So these functions are supported in IE9 or higher.</b></div>
+</body>
+
+</html>
+
+<script>
+    //normal method : 
+    // let numbers = [30, 60, 190];
+    // let result = true;
+    // for (let i = 0; i < numbers.length; i++) {
+    //     if (numbers[i] >= 100) {
+    //         result = false;
+    //     }
+    // }
+    // console.log(result);
+
+    //.every method : 
+
+    let numbers = [30, 60, 90];
+    let result = numbers.every(function (element) {
+        return (element < 100);
+    });
+    console.log(result);
+
+    let even = [11, 21, 31];
+    let numberType = even.every(function (nums) {
+        return ((nums % 2)) // as all values are not divisable no output will be 0 i.e false...so it will return true
+    })
+    console.log(numberType)
+</script>

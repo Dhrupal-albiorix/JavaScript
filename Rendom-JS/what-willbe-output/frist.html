@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <p>console</p>
+
+    <ul>Falsey values
+        <li>undefine</li>
+        <li>null</li>
+        <li>NaN</li>
+        <li>0</li>
+        <li>Empty string</li>
+    </ul>
+    <p>empty object , empty arrey , 1 will be truthy value</p>
+</body>
+
+</html>
+
+<script>
+    const bull = new Boolean(false);
+
+    if (false === bull) {
+        console.log("hello")
+    }
+    // will not follow this condition bcz false is boolean where as bull is object
+
+    if (false == bull) {
+        console.log("hello same")
+    }
+    // true bcz == will not compare datatype and value of both will be same
+
+    if (true) {
+        console.log("hello true")
+    }
+    // true 
+
+
+    if (false) {
+        console.log("hello false")
+    }
+    // no console as false
+
+
+    if ('' == undefined) {
+        console.log("hello different values")
+    }
+    // as both are independent values... ' ' will not be equal to undefine in any case so it is false
+
+    if ({}) {
+        console.log("empty object is true")
+    }
+    //empty object and array are true
+
+
+    if (" ") {
+        console.log(" empty string")
+    } // empty string are falsy
+</script>

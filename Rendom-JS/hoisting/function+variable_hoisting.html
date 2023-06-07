@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <a href="https://youtu.be/yQD2tKhoW0k">ref YT THAPA</a>
+</body>
+
+</html>
+
+<script>
+    console.log("i am " + job) //undefine
+    var job = "devloper"
+    console.log("i am " + job) //devloper
+
+
+    function whatJob() {
+        console.log("what job function : ", job); //devloper
+    }
+
+    whatJob();
+
+
+    function myJob() {
+        console.log(job); // undefine
+        var job = "full steck devloper" //reinitization leads to undefine in upper console
+        console.log(job) // full steck devloper
+    }
+
+    myJob();
+
+</script>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <p>function that returns another function with the help of JavaScript is called a Currying function</p>
+    <a
+        href="https://www.tutorialspoint.com/how-to-call-a-function-that-returns-another-function-in-javascript#:~:text=In%20JavaScript%2C%20you%20can%20call,variable%20name%2C%20followed%20by%20parentheses.">Must
+        read</a>
+
+    <p>The task is to call a function that returns another function with the help of JavaScript is called a Currying
+        function,
+        a function with numerous arguments that can be converted into a series of nesting functions with the help of the
+        currying method.
+
+        We are going to discuss a few techniques.
+
+        Approach:
+
+    <p> First, call the first function-1.</p>
+    <p> Define a function-2 inside function-1.</p>
+    <p>Return the call to function-2 from function-1.</p>
+
+    </p>
+</body>
+
+</html>
+
+<script>
+    let outerFunction = function () {
+        return function () {
+            console.log("Inner function");
+        }
+    }
+
+    let innerFunction = outerFunction();
+    innerFunction(); // "Inner function"
+
+
+    // You could also call the inner function immediately after calling the outer 
+    // function by adding parentheses to the outer function call, like this −
+    //     outerFunction()(); // "Inner function"
+
+    //*************************************************************************************************
+
+    // A function that returns another function
+    function createMultiplier(x) {
+        console.log(arguments)
+        return function (y) {
+            return x * y;
+        };
+    }
+    // Call the createMultiplier function and assign the returned function to a variable
+    let double = createMultiplier(2);
+    // Use the returned function to perform a calculation
+    console.log(double(5)); // Output: 10
+
+    // In this example, createMultiplier is a higher - order function because it returns a function. 
+    // The returned function is called a closure because it remembers the value of x from the outer
+    // function’s scope.
+</script>

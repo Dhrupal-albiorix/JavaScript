@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <p>
+        // How to preserve the immutability on my heroes list?
+    </p>
+    <p>solution :
+        <br>
+    <p>
+        In this code, the spread operator (...h) is used to create a shallow copy of each object in the heroes array.
+        Then, the
+        name property of each copied object is modified by converting it to uppercase.
+
+        By using this approach, the original heroes array remains unchanged, and the newHeroes array contains the
+        transformed
+        objects with uppercase names. This ensures the immutability of the heroes list.
+    </p>
+    </p>
+</body>
+
+</html>
+
+<script>
+    const heroes = [
+        { name: 'Wolverine', family: 'Marvel', isEvil: false },
+        { name: 'Deadpool', family: 'Marvel', isEvil: false },
+        { name: 'Magneto', family: 'Marvel', isEvil: true },
+        { name: 'Charles Xavier', family: 'Marvel', isEvil: false },
+        { name: 'Batman', family: 'DC Comics', isEvil: false },
+        { name: 'Harley Quinn', family: 'DC Comics', isEvil: true },
+        { name: 'Legolas', family: 'Tolkien', isEvil: false },
+        { name: 'Gandalf', family: 'Tolkien', isEvil: false },
+        { name: 'Saruman', family: 'Tolkien', isEvil: true },
+    ]
+
+    // const newHeroes = heroes.map(h => {
+    //     h.name = h.name.toUpperCase()
+    //     return h
+    // })
+
+    // console.log(newHeroes, heroes)
+
+    // How to preserve the immutability on my heroes list?
+
+    //-----------------answer---------------------------//
+
+    const newHeroes2 = heroes.map(h => ({
+        ...h,
+        name: h.name.toUpperCase()
+    }));
+    console.log(newHeroes2, heroes)
+</script>

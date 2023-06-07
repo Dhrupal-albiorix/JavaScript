@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <p>This is useful when you don't know what type you're expecting for a value. For example, data coming from an API.
+        Let's
+        say an API is configured to return a string, maybe "50" and you want to compare it to a number using strict
+        equality
+        like this:</p>
+</body>
+
+</html>
+
+<script>
+    const apiData = {
+        rate: "50"
+    }
+
+    console.log(apiData.rate === 50)
+    // false
+
+    const rate = Number(apiData.rate)
+
+    console.log(rate === 50)
+// true
+</script>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="text" name="" id="my-input">
+    <br>
+    set the value: <input type="text" name="" id="ip">
+    <br>
+    get the value of a selected option :
+    <input type="radio" id="my-select" name="fav_language" value="HTML">
+    <input type="radio" id="css" name="fav_language" value="CSS">
+</body>
+
+</html>
+
+<script>
+    const input = document.querySelector('#my-input');
+    console.log(input.value);
+
+    const ip = document.querySelector('#ip');
+    ip.value = 'Hello, world!';
+
+    const select = document.querySelector('#my-select');
+    console.log(select.value);
+</script>

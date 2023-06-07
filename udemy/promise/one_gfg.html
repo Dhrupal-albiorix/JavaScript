@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+
+</html>
+
+<script>
+    let p = new Promise(function (resolve, reject) {
+        let a = 23; let b = 55;
+        if (((a * b) / (b * 23) === 1)) {
+            resolve();
+        } else {
+            reject();
+        }
+    })
+
+    p.then(function () {
+        console.log("equal")
+    }).catch(function () {
+        console.log("error")
+    })
+
+
+    //ex2 : 
+
+    let myFun = new Promise(function (resolve, reject) {
+        let myValue = 23;
+        if (myValue > 22) {
+            resolve();
+        } else {
+            reject();
+        }
+
+        return function myInnerfun() {
+            console.log(myValue)
+        }
+    })
+
+    myFun.then(function () {
+        console.log(myFun);
+    }).catch(function () {
+        console.log("err")
+    })
+</script>

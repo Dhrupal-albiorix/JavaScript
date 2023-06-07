@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div>
+        Array.prototype.sort() is used to sort an array. It accepts an optional argument compareFunction which defines
+        the
+        criteria to determine which element of the array is small and which is bigger. The compareFunction accepts 2
+        arguments
+        i.e. the values being compared. If value1 is smaller then compare function should return a negative value. If
+        value2 is
+        smaller, compareFunction should return a positive value. In case of compare function is not provided, the
+        default
+        compareFunction converts the array elements into strings and then compares those strings in Unicode point order.
+    </div>
+</body>
+
+</html>
+<script>
+    var arr = [3, 1, 5, 4, 2].sort();
+    console.log(arr);
+</script>

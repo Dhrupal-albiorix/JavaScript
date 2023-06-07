@@ -1,0 +1,38 @@
+<script>
+    function anotherCaller() {
+        console.log(`${this.caller} called, too!`);
+    }
+
+    const call = {
+        caller: "mom",
+        anotherCaller: anotherCaller,
+        says: function () {
+            console.log(`Hey, ${this.caller} just called.`);
+        }
+    };
+
+    call.anotherCaller() //mom called
+
+    let newCall = call.anotherCaller;
+
+    newCall();//undefine called
+
+    // We are invoking newCall() function globally, which means the 'this' keyword is referring to the 
+    // global object.It doesn't matter that we are assigning newCall to a function inside the call object.
+    //  We are calling newCall globally, and globally is where 'this' is assigned.
+
+    // const call = {
+    //     caller: "mom",
+    //     anotherCaller: function () {
+    //         console.log(`${this.caller} called, too!`)
+    //     },
+    //     says: function () {
+    //         console.log(`Hey, ${this.caller} just called.`);
+    //     }
+    // };
+
+
+    // let newCall = call.anotherCaller;
+    // newCall();
+
+</script>

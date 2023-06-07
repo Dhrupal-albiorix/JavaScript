@@ -1,0 +1,23 @@
+<script>
+    // let Pet = (name) => {
+    //     this.name = name;
+    //     this.getName = () => this.name;
+    // } //aerrow function would not create constructor so will give error
+
+    function Pet(name) {
+        this.name = name;
+        this.getName = () => this.name;
+    }
+
+    const cat = new Pet('Fluffy'); //create cat object using pet function costructor with new keyword
+    console.log(cat)
+
+    console.log(cat.getName()); // What is logged?
+
+    const { getName } = cat;   //destructuring cat object and getting only getName property function
+    console.log(getName());     // What is logged? 
+
+
+
+
+</script>

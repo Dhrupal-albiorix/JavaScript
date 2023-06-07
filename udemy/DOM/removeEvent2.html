@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Remove an event handler</title>
+    <div id="add">
+        <input type="button" onclick="removeHandler()" value="remove" />
+    </div>
+    <p id="random"></p>
+</head>
+
+<body>
+    <script>
+        let content = document.getElementById("add");
+        content.addEventListener("mousemove", myFunction);
+        function removeHandler() {
+            content.removeEventListener("mousemove", myFunction);
+        }
+        function myFunction() {
+            document.getElementById("random").innerHTML = Math.random();
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+
+</html>
+
+<script>
+    const employees = [
+        { name: "Adam", salary: 5000, bonus: 500, tax: 1000 },
+        { name: "Noah", salary: 8000, bonus: 1500, tax: 2500 },
+        { name: "Fabiano", salary: 1500, bonus: 500, tax: 200 },
+        { name: "Alireza", salary: 4500, bonus: 1000, tax: 900 },
+    ];
+
+    // calculate the net amount to be given to the employees
+    const calcAmt = (obj) => {
+        newObj = {};
+        newObj.name = obj.name;
+        newObj.netEarning = obj.salary + obj.bonus - obj.tax;
+        return newObj;
+    };
+
+    let newArr = employees.map(calcAmt);
+    console.log(newArr);
+
+
+
+
+</script>

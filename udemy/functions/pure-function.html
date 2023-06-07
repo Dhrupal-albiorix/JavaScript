@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div>
+        Note: If a pure function calls a pure function, this isn't a side effect, and the calling function is still
+        considered
+        pure. (Example: using Math.max() inside a function)
+
+        Below are some side effects (but not limited to) that a function should not produce in order to be considered a
+        pure
+        function
+
+        <li>Making an HTTP request</li>
+        <li>Mutating data</li>
+        <li>Printing to a screen or console</li>
+        <li>DOM Query/Manipulation</li>
+        <li>Math.random()</li>
+        <li>Getting the current time</li>
+    </div>
+
+    <div>
+        console.log has memory leak problem in js…values that we console ,
+        never goes to garbage collection so it will
+        be main issue in pure function also
+    </div>
+
+    <a href="https://www.freecodecamp.org/news/what-is-a-pure-function-in-javascript-acb887375dfe/">free code camp</a>
+    <a href="https://www.geeksforgeeks.org/pure-functions-in-javascript/">GFG</a>
+</body>
+
+</html>
+
+<script>
+    let myfun = (price) => {
+        return price / 10;
+    }
+    console.log(myfun(1200));
+    // The above function will always return the same result if we pass the same product price.
+    // In other words, its output doesn’t get affected by any other values / state changes.
+    // So we can call it pure function
+
+    //********************************************************************************//
+
+    let tax = 20;
+    function calculateGST(productPrice) {
+        return productPrice * (tax / 100) + productPrice;
+    }
+    console.log(calculateGST(15))
+// It is not a pure function as the output is dependent on an external variable “tax”.
+// So if the tax value is updated somehow, then we will get a different output though we pass the 
+// same productPrice as a parameter to the function.
+
+</script>

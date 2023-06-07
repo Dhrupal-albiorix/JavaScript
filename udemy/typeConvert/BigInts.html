@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div>
+        console
+    </div>
+</body>
+
+</html>
+
+<script>
+    //const a = 1n + 2; // TypeError: Cannot mix BigInt and other types
+    const a = Number(1n) + 2; // 3
+    const b = 1n + BigInt(2); // 3n
+    console.log(a, b)
+
+    //You can compare BigInts with numbers.
+    const c = 1n > 2; // false
+    const d = 3 > 2n; // true
+    console.log(c, d)
+</script>

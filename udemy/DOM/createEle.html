@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="main"></div>
+</body>
+
+</html>
+
+<script>
+    const ele = document.createElement('div');
+    ele.innerHTML = 'Hello, world! , i am created th doc.cerateelement syntax';
+
+    const nested_ele = document.createElement("p");
+    nested_ele.innerText = " i am nested element created using ele.appendchild"
+    ele.appendChild(nested_ele);
+
+    document.body.appendChild(ele);
+</script>

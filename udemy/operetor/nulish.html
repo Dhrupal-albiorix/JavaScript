@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <p>console</p>
+</body>
+
+</html>
+
+<script>
+
+    // "?" will move to right only if left side is undefine or null otherwise it will return output from
+    //frist left value
+
+    //while || move to right for all falsy values like 0 , undefine , wrong calculations , null etc...
+
+
+    console.log((2 == 3) ?? (3 == 3)); //false
+    console.log((2 == 4) || (3 == 3)); //true
+
+    console.log(null ?? 40)          // 40
+    console.log(undefined ?? 50)     // 50
+    console.log(undefined ?? null)   // null
+
+    console.log(0 || 20)             // 20 In case of ||, 0 is type coerced to false
+    console.log(0 ?? 20)             // 0  In case of ??, 
+    //0 is not coerced and its neither null nor undefined
+
+    //console.log(0 || 20 ?? 30)       // Uncaught SyntaxError: missing ) after argument list. As ?? can't be chained
+    console.log((0 || 20) ?? 30)   // 20
+    //onece it get to 20 here and it is true it will not run right side. just like || opertor
+
+    console.log((0 || 20) || 30) 
+</script>

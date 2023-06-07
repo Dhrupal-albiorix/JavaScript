@@ -1,0 +1,30 @@
+<script>
+    var x = 10;
+
+    function outer() {
+        console.log(x); // Output: 10
+
+        function inner() {
+            console.log(x); // Output: undefine
+            var x = 20;
+
+            function nested() {
+                console.log(x); // Output: 20
+            }
+
+            nested();
+        }
+
+        inner();
+        console.log(x); // Output: 10
+    }
+
+    function bar() {
+        console.log("Outer");
+    }
+
+    outer();
+    console.log(x); // Output: 10
+    bar(); // Output: "Outer"
+
+</script>

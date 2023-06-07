@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <p>console</p>
+    <div>
+        Short-circuiting is jargon for conditional evaluation. For example, in the expression a && (b + c), if a is
+        falsy, then
+        the sub-expression (b + c) will not even get evaluated, even if it is grouped and therefore has higher
+        precedence than
+        &&. We could say that the logical AND operator (&&) is "short-circuited". Along with logical AND, other
+        short-circuited
+        operators include logical OR (||), nullish coalescing (??), and optional chaining (?.).
+    </div>
+</body>
+
+</html>
+
+<script>
+    // frist check Associativity. 
+    //only for nullish coalescing ///////////////////////////////
+    // for left to right : 
+    // ex: ?? opertor 
+    // if left side has bigger pripority then right side we have to grop one side. 
+    // ?? has bigger priority then || so , 
+    //  That means you have to write(a ?? b) || c or a ?? (b || c), instead of a ?? b || c.
+    // and same applies for right side. 
+    //console.log(0 || 20 ?? 30)       // Uncaught SyntaxError: missing ) after argument list. As ?? can't be chained
+    console.log((0 || 20) ?? 30)   // 20
+
+    console.log(C() || B() && A()); // no syntaxError
+
+</script>

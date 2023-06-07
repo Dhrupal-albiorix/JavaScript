@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h3>Set vs array : batter opetion , set dose not print repated value</h3>
+ 
+</body>
+
+</html>
+
+<script>
+    let data = [1, 2, 3, 2, 3, 4, 1, 2, 3, 2, 3, 4, 2, 3, 2, 3, 4];
+    let data_set = new Set([1, 2, 3, 2, 3, 4, 1, 2, 3, 2, 3, 4, 2, 3, 2, 3, 4]);
+    console.log(data, "normal array");
+    console.log([...data_set], "set method");
+
+    //forEach using set 
+
+    data_set.forEach(ele => {
+        console.log(ele * 2, "forEach on set")
+    })
+
+
+    data_set.add("i am added with add method");
+    data_set.add("i am also added with add method");
+    data_set.delete("i am added with add method");
+    //data_set.clear() everything is clear
+    console.log(data_set)
+  
+</script>

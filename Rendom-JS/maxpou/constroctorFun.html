@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <p>
+        explaning err :
+    <p>
+        We got the following error TypeError: fido.bark is not a function. On the previous code, we set the bark
+        function on
+        another function (Dog()), which is also a constructor. Is it possible because in JavaScript, functions are
+        objects.
+        we will need prototype hear to add function on constructor function.
+    </p>
+    </p>
+
+    <p>let fido = new Dog('fido')
+        <br>
+        console.log(typeof(fido)) : object as it is initilized with new keyword
+    </p>
+
+    <p>using class</p>
+    <p>inherite this from constructor in function </p>
+    <p>bark2() {
+        console.log(this.name + ' says woof')
+        }</p>
+    <p>we dont use function keyword inside class</p>
+    <p>function call : fido2.bark()</p>
+</body>
+
+</html>
+
+<script>
+    // function Dog(name) {
+    //     this.name = name
+    // }
+    // Dog.bark = function () {
+    //     console.log(this.name + ' says woof')
+    // }
+    // let fido = new Dog('fido')
+    //console.log(typeof(fido)) : object as it is initilized with new keyword 
+    // fido.bark() 
+
+    // 👎 (the dirty one).fido.bark isn’t a function but Dog.bark is.
+    // So let’s use this one and solve the this issue with a function.prototype.bind() as in the exercise above:
+
+    // var boundedBark = Dog.bark.bind(fido)
+    // boundedBark() // "fido says woof"
+    //--------------------correct way-------------------------------
+
+    function Dog(name) {
+        this.name = name
+    }
+
+    Dog.prototype.bark = function () {
+        console.log(this.name + ' says woof')
+    }
+
+    let fido = new Dog('fido')
+    fido.bark() // "fido says woof"
+
+    //--------------------with class ----------------------------------
+
+    class Dog2 {
+        constructor(name) {
+            this.name = name
+        }
+
+        bark2() {
+            console.log(this.name + ' says woof')
+        }
+    }
+
+    let fido2 = new Dog('fido2')
+    fido2.bark() // "fido says woof"
+</script>

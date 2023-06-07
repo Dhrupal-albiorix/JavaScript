@@ -1,0 +1,17 @@
+<script>
+    function outer() {
+        var x = 10;
+
+        return function middle() {
+            var y = 20;
+
+            return function inner(z) {
+                console.log(x + y + z);
+            };
+        };
+    }
+
+    var innerFn = outer()();
+    innerFn(5);
+
+</script>

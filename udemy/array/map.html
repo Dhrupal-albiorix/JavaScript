@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        used to modify each element of the array according to the callback function. Array.prototype.map() calls the callback
+        function once for each element in the array in order. The point to note is that the callback function is called on
+        indexes of elements that have assigned values including undefined.
+    </div>
+</body>
+</html>
+
+<script>
+    console.log([1, 4, 9].map(Math.sqrt));
+    console.log(["1.232", "9.345", "3.2345"].map(parseFloat))
+</script>

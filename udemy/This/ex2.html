@@ -1,0 +1,21 @@
+<script>
+    const call = {
+        caller: "mom",
+        says: function () {
+            console.log(`Hey, ${this.caller} just called.`);
+        }
+    };
+
+    call.says();
+
+
+    const call2 = {
+        caller2: "mom",
+        says2: () => {
+            console.log(`Hey, ${this.caller2} just called.`);
+        }
+    };
+
+    call2.says2();
+
+</script>

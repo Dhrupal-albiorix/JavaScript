@@ -1,0 +1,16 @@
+<script>
+    function outer() {
+        var x = 10;
+
+        function inner() {
+            console.log(x); //undefine 
+            //bcz var is reintized in this scop again. but access i.e console before initized is undefine in case of var
+            var x = 20;
+        }
+
+        inner();
+    }
+
+    outer();
+
+</script>

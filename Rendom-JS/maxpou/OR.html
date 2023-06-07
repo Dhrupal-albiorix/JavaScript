@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div>
+        <p>// weird results
+        <p>[] == ![] // true //bcz refernce will be passed
+        <p>imagin a = [] and b=[]
+        <p>now both a nd b will be at different location
+        <p>so a==b will be false.
+        <p>like that unNamed two arrays are stored in differnt location nd
+        <p>so == will lead to false</p>
+        </p>
+        </p>
+        </p>
+        </p>
+        </p>
+        <p>//------------------------------------------------------------//</p>
+        <p>[] == false // true</p>
+        <p>empty array & obj is falsy value</p>
+        <p>//------------------------------------------------------------//</p>
+        <p>// Non transitive relation</p>
+        <p>"1" == true // true</p>
+        <p>"01" == true // true</p>
+        <p>"01" == "1" // false</p>
+    </div>
+</body>
+
+</html>
+
+<script>
+    function isBig(thing) {
+        if (thing == 0 || thing == 1 || thing == 2) {
+            console.log(false)
+        }
+        else {
+            console.log("lol")
+        }
+    }
+    isBig(1) // false
+    isBig([2]) // false
+    isBig([3]) // true
+
+    //explation
+    console.log([2] == 2, "values only compared"); //true
+    console.log([2] === 2, "datatype also compared") //false
+</script>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div>
+        Array.Prototype.filter(): It is used to get a new array that has only those array elements which pass the test
+        implemented by the callback function. It accepts a callback function as an argument. This callback function has
+        to
+        return a true or false. Elements for which the callback function returned true are added to the newly returned
+        array.
+    </div>
+</body>
+
+</html>
+
+<script>
+    //normal method
+    // function fnFilterStudents_loop(aStudent) {
+    //     var tempArr = [];
+    //     for (var i = 0; i < aStudent.length; i++) {
+    //         if (aStudent[i].fPercentage > 80.0) {
+    //             tempArr.push(aStudent[i]);
+    //         }
+    //     }
+    //     return tempArr;
+    // }
+    // aStudent = [
+    //     { sStudentId: "001", fPercentage: 91.2 },
+    //     { sStudentId: "002", fPercentage: 78.7 },
+    //     { sStudentId: "003", fPercentage: 62.9 },
+    //     { sStudentId: "004", fPercentage: 81.4 }];
+
+    // console.log(fnFilterStudents_loop(aStudent));
+
+    // filter method : 
+    function fnFilterStudents_filter(aStudent) {
+        return aStudent.filter(function (oStudent) {
+            return oStudent.fPercentage > 80.0;
+        });
+    }
+    aStudent = [
+        { sStudentId: "001", fPercentage: 91.2 },
+        { sStudentId: "002", fPercentage: 78.7 },
+        { sStudentId: "003", fPercentage: 62.9 },
+        { sStudentId: "004", fPercentage: 81.4 }];
+    console.log(fnFilterStudents_filter(aStudent));
+
+    //************************************************************************************************
+
+    function removeUndefined(myArray) {
+        return myArray.filter(
+            function (element) {
+                return element;
+            });
+    }
+    var arr = [1, undefined, 3, undefined, 5];
+    console.log(arr);
+    console.log(removeUndefined(arr));
+</script>

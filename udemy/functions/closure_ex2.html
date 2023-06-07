@@ -1,0 +1,48 @@
+<!-- <script>
+    // function x() {
+    for (let i = 1; i <= 5; i++) {
+        console.log(i, "befour")
+        setTimeout(function () {
+            console.log(i, "in function")
+        })
+        console.log(i, "after")
+    }
+    // };
+    // x()
+</script> -->
+
+<script>
+    var x = 10;
+
+    function foo() {
+        var y = x + 5;
+        return y;
+    }
+
+    function bar() {
+        var x = 2;
+
+        //foo() // no scop chain will be created so globle scop , x=10
+        //as we are only calling function it will not be 
+        //closure...if we define then only it will be closure..and so if it is not closuer it will take
+        //lexical scop value that is function foo()  scop value and function foo() has valriable as given
+        //in globle scop...so heare x will be 10
+
+        function foo() {
+            var y = x + 5;
+            return y;
+        }; // function Closures scop  x =2 bcz it will create closure and so it will refere to it's 
+        //own reference from nearest parent function and for that it will take x=2 from its nearest parent 
+
+        return foo();
+    }
+
+    function main() {
+        // foo(); 
+        return bar();
+        // return 0;
+    }
+
+    const fn = main();
+    console.log(fn);
+</script>

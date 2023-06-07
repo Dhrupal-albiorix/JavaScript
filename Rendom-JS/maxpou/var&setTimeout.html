@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        div {
+            font-size: 12px;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        I like this one because it's a bit trickier and it deals with scope and the JavaScript Event Loop.
+        <br>
+        The classic pitfall here is the Zero delays. setTimeout(callback, 0) doesn’t mean that the callback will be fire
+        after
+        zero milliseconds.
+        <br>
+        Here's what happens on the event loop side:
+        <br>
+        Current Call Stack is set to the first setTimeout().<br>
+        windows.setTimeout() is considered as a Web APIs (for better Non-Blocking I/O).<br> So the call stack sends this
+        part of the
+        code to correct Web APIs. After 0 milliseconds, the callback (here an anonymous function) would be sent to the
+        Queue
+        (not to the call stack).<br>
+        As the call stack is free, for-loop can continue to the second setTimeout …(repeat after we meet this condition
+        i < 4)… <br>Now the loop is over and i===4. JS can now execute the callback queue one by one. Each
+            console.log(i) will print the
+            4.
+    </div>
+    <br>
+    <div>
+        switch to let keyword (instead of var) ,makes scope a bit more easy to understand.
+
+    </div>
+</body>
+
+</html>
+
+<script>
+    for (var i = 0; i < 4; i++) {
+        setTimeout(() => console.log(i, "using var"), 0)
+    }
+    for (let i = 0; i < 4; i++) {
+        setTimeout(() => console.log(i, "using let"), 0)
+    }
+</script>

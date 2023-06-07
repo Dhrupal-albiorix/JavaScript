@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Form</title>
+    <link rel="stylesheet" href="form.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+
+    <div class="container">
+        <form method="post" class="myForm" autocomplete="on" id="DataForm">
+            <!--First name-->
+            <div class="box">
+                <label for="firstName" class="fl fontLabel"> First Name: </label>
+                <div class="new iconBox">
+                    <i class="fa fa-user" aria-hidden="true"></i>
+                </div>
+                <div class="fr">
+                    <input type="text" name="firstName" placeholder="First Name" class="textBox" autofocus="on" required
+                        id="fName">
+                </div>
+                <div class="clr"></div>
+            </div>
+            <!--First name-->
+
+
+            <!--Second name-->
+            <div class="box">
+                <label for="secondName" class="fl fontLabel"> Seconed Name: </label>
+                <div class="fl iconBox"><i class="fa fa-user" aria-hidden="true"></i></div>
+                <div class="fr">
+                    <input type="text" required name="secondName" placeholder="Last Name" id="lName" class="textBox">
+                </div>
+                <div class="clr"></div>
+            </div>
+            <!--Second name-->
+
+
+            <!---Phone No.------>
+            <div class="box">
+                <label for="phone" class="fl fontLabel"> Phone No.: </label>
+                <div class="fl iconBox"><i class="fa fa-phone-square" aria-hidden="true"></i></div>
+                <div class="fr">
+                    <input type="text" required name="phoneNo" maxlength="10" placeholder="Phone No." class="textBox"
+                        id="phone">
+                </div>
+                <div class="clr"></div>
+            </div>
+            <!---Phone No.---->
+
+
+            <!---Email ID---->
+            <div class="box">
+                <label for="email" class="fl fontLabel"> Email ID: </label>
+                <div class="fl iconBox"><i class="fa fa-envelope" aria-hidden="true"></i></div>
+                <div class="fr">
+                    <input type="email" required name="email" placeholder="Email Id" id="email" class="textBox">
+                </div>
+                <div class="clr"></div>
+            </div>
+            <!--Email ID----->
+
+
+            <!---Password------>
+            <div class="box pswBox">
+                <label for="password" class="fl fontLabel"> Password </label>
+                <div class="fl iconBox"><i class="fa fa-key" aria-hidden="true"></i></div>
+                <div class="fr">
+                    <input type="Password" required name="password" placeholder="Password" id="psw" class="textBox">
+                </div>
+                <div class="clr"></div>
+            </div>
+            <!---Password---->
+
+
+
+            <!--Terms and Conditions------>
+            <div class="box terms">
+                <input type="checkbox" name="Terms" required> &nbsp; I accept the terms and conditions
+            </div>
+            <!--Terms and Conditions------>
+
+
+
+            <!---Update Button------>
+
+
+
+
+            <!---Submit & clearButton------>
+            <div class="box clear_submit">
+                <input type="button" id="updtbox" name="Update" class="submit" style="display: none; " value="Update">
+                <input type="button" name="Submit" id="clearAll" class="submit" value="Clear Table">
+                <input type="Submit" name="Submit" class="submit" id="subBtn" value="SUBMIT">
+            </div>
+
+        </form>
+
+        <div class="DataTable">
+            <div class="wrapper">
+                <img class="search-icon"
+                    src="data:image/svg+xml;utf8;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pgo8IS0tIEdlbmVyYXRvcjogQWRvYmUgSWxsdXN0cmF0b3IgMTkuMC4wLCBTVkcgRXhwb3J0IFBsdWctSW4gLiBTVkcgVmVyc2lvbjogNi4wMCBCdWlsZCAwKSAgLS0+CjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgdmVyc2lvbj0iMS4xIiBpZD0iQ2FwYV8xIiB4PSIwcHgiIHk9IjBweCIgdmlld0JveD0iMCAwIDU2Ljk2NiA1Ni45NjYiIHN0eWxlPSJlbmFibGUtYmFja2dyb3VuZDpuZXcgMCAwIDU2Ljk2NiA1Ni45NjY7IiB4bWw6c3BhY2U9InByZXNlcnZlIiB3aWR0aD0iMTZweCIgaGVpZ2h0PSIxNnB4Ij4KPHBhdGggZD0iTTU1LjE0Niw1MS44ODdMNDEuNTg4LDM3Ljc4NmMzLjQ4Ni00LjE0NCw1LjM5Ni05LjM1OCw1LjM5Ni0xNC43ODZjMC0xMi42ODItMTAuMzE4LTIzLTIzLTIzcy0yMywxMC4zMTgtMjMsMjMgIHMxMC4zMTgsMjMsMjMsMjNjNC43NjEsMCw5LjI5OC0xLjQzNiwxMy4xNzctNC4xNjJsMTMuNjYxLDE0LjIwOGMwLjU3MSwwLjU5MywxLjMzOSwwLjkyLDIuMTYyLDAuOTIgIGMwLjc3OSwwLDEuNTE4LTAuMjk3LDIuMDc5LTAuODM3QzU2LjI1NSw1NC45ODIsNTYuMjkzLDUzLjA4LDU1LjE0Niw1MS44ODd6IE0yMy45ODQsNmM5LjM3NCwwLDE3LDcuNjI2LDE3LDE3cy03LjYyNiwxNy0xNywxNyAgcy0xNy03LjYyNi0xNy0xN1MxNC42MSw2LDIzLjk4NCw2eiIgZmlsbD0iIzAwMDAwMCIvPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8L3N2Zz4K" />
+                <input class="search" placeholder="Search" type="text" id="searchtextbox" onkeyup="searchFun()">
+            </div>
+
+
+            <table role="table" id="myTable">
+
+                <thead role="rowgroup">
+                    <tr role="row">
+                        <th role="columnheader">Index</th>
+                        <th role="columnheader">First Name</th>
+                        <th role="columnheader">Last Name</th>
+                        <th role="columnheader">Phone</th>
+                        <th role="columnheader">Email</th>
+
+                        <th role="columnheader">Delete</th>
+                        <th role="columnheader">Edit</th>
+                    </tr>
+                </thead>
+                <tbody id="showUser"></tbody>
+            </table>
+
+        </div>
+    </div>
+    <script src="form.js"></script>
+</body>
+
+
+
+
+
+</html>

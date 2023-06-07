@@ -1,0 +1,43 @@
+<!-- <script>
+   
+</script> -->
+
+<script>
+
+    //  const object = {
+    //         message: 'Hello, World!'
+    //     };
+
+    //     console.log(this)
+
+    //     function logMessage() {
+    //         console.log(this.message); //undefine
+    //     }
+
+    //     logMessage();
+
+    /////////////////////////////////////////////////////////////////////////////////////////////////////
+
+    // var length = 14;
+    // function callback() {
+    //     console.log(this.length); // What is logged? //14
+    // }
+
+    // callback();
+
+    ///////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+    var length = 4; //-------------------------------
+    function callback() {
+        console.log(this.length); // What is logged? 4
+    }
+
+    const object = {
+        length: 5,//--------------------------------
+        method(callback) {
+            callback();
+        }
+    };
+
+    object.method(callback);
+</script>

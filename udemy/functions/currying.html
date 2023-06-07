@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div>
+        <li>It helps us to create a higher-order function</li>
+        <li>It reduces the chances of error in our function by dividing it into multiple smaller functions that can
+            handle one
+            responsibility.</li>
+        <li>It is very useful in building modular and reusable code</li>
+        <li>It helps us to avoid passing the same variable multiple times</li>
+        <li>It makes the code more readable</li>
+    </div>
+</body>
+
+</html>
+<script>
+    //normal function 
+    function calculateVolume(length, breadth, height) {
+        return length * breadth * height;
+    }
+    console.log(calculateVolume(4, 5, 6));
+
+    //curring 
+    function calculateVolume2(length2) {
+        return function (breadth2) {
+            return function (height2) {
+                return length2 * breadth2 * height2;
+            }
+        }
+    }
+    console.log(calculateVolume2(4)(5)(6));
+
+
+</script>

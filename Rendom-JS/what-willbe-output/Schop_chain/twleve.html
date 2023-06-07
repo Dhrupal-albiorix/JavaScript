@@ -1,0 +1,19 @@
+<script>
+    function outer() {
+
+        if (true) {
+            console.log(typeof inner); // Output: ?  function
+
+            function inner() {
+                console.log("Hello, inner!");
+            }
+
+            inner();
+        }
+
+        console.log(typeof inner); // Output: ? function //function scop do not depend on block
+    }
+
+    outer();
+
+</script>

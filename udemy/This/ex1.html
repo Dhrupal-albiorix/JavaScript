@@ -1,0 +1,28 @@
+<script>
+    const object = {
+        message: 'Hello, World!',
+        message2: 'namste, World!',
+
+        fun: function myFun() {
+            console.log("abcd")
+        },
+
+        fun2: function myFun() {
+            console.log(this)
+        },
+
+        logMessage() {
+            console.log(this); // What is logged?
+        }
+    };
+
+    //setTimeout(object.fun, 1000); //follow timeout , results abcd
+    //setTimeout(object.fun(), 1000); //dose not follow timeout , results abcd
+
+    setTimeout(object.fun2, 1000);//follow timeout result in undefine
+
+    setTimeout(object.fun2(), 1000); ////dose not follow timeout . result namste
+
+    //setTimeout(object.logMessage, 1000); //follow timeout result in undefine
+    //setTimeout(object.logMessage(), 1000); //dose not follow timeout , results hellow world
+</script>

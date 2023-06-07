@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <a href="https://youtu.be/FgXFoSr2Db8">YouTube</a>
+    <p>variables inside classes are called properties</p>
+    <p>function inside class are called method</p>
+</body>
+
+</html>
+
+<script>
+    //constructor function  : 
+
+    function BankAccount(customerName, balance = 0) {
+
+        //constructor property 
+        this.customerName = customerName;
+        this.accountNumber = Date.now();
+        this.balance = balance;
+
+        //methods : 
+        this.deposite = function (amount) {
+            this.balance += amount;
+        }
+
+        this.withdraw = (amount) => {
+            this.balance -= amount
+        }
+
+    }
+
+    //create objects from constructor function...where each object will occupai its own memory
+    //all objects will ne indepandent of each other
+    let RakesAcc = new BankAccount("Rakesh", 10000);
+    let joi = new BankAccount("joi")
+
+    // accessing objects
+    console.log(RakesAcc);
+    console.log(RakesAcc.accountNumber);
+
+    joi.customerName = "meeta";
+    console.log(joi);
+
+    //calling method from class or constructor function
+    RakesAcc.deposite(5000);
+    console.log(RakesAcc); //updated
+
+    RakesAcc.withdraw(200);
+    console.log(RakesAcc) //updated
+</script>

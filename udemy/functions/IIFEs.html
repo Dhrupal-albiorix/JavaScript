@@ -1,0 +1,23 @@
+<script>
+    (function myfun() {
+        console.log("simple method of iife")
+    })();
+
+    (() => {
+        console.log("aerrow method of iife")
+    })();
+
+    +function () {
+        console.log("unary operator + method of iife same way we can use - , ~ and !")
+    }();
+
+    ~ function () {
+        console.log("unary operator ~ method of iife , same way we can use - , + and !")
+    }();
+
+    void function () {
+        console.log(" void is only useful in IIFE else it will return undefine")
+    }();
+
+
+</script>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button class="btn">click</button>
+    <button class="btn2">click2</button>
+</body>
+
+</html>
+
+<script>
+    const counter = {
+        count: 0,
+        incrementCounter: function () {
+            console.log(this);
+            this.count++;
+        }
+    }
+    console.log(counter.incrementCounter) //function inside counter object
+    document.querySelector('.btn').addEventListener('click', counter.incrementCounter); // btn on which event is appied
+
+    /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+    //using bind
+    const counter2 = {
+        count: 0,
+        incrementCounter: function () {
+            console.log(this);
+            this.count++;
+        }
+    }
+    console.log(counter2.incrementCounter)
+    document.querySelector('.btn2').addEventListener('click', counter.incrementCounter.bind(counter2));
+
+    //in the above example, the this keyword inside the incrementCounter method will now correctly refer to the counter object 
+    //instead of the event object.
+</script>

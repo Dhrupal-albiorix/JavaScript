@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <a href="https://blog.bitsrc.io/collection-of-closure-problems-in-javascript-fcd38ac1c765">MUST SOLVE QUESTIONS</a>
+</body>
+
+</html>
+
+<script>
+    function x() {
+        for (var i = 1; i <= 5; i++) {
+            console.log(i, "befour")
+            setTimeout(function () {
+                console.log(i, "in function")
+            })
+            console.log(i, "after")
+        }
+    };
+    x()
+
+// function y(){
+//     for (let i=1 ; i<=5 ; i++){
+//         setTimeout(function(){
+//             console.log(i)
+//         })
+//     }
+// };
+// y()
+
+// function z(){
+//     for (var i=1 ; i<=5 ; i++){
+//         function close(i){
+//              setTimeout(function(){
+//             console.log(i)
+//         }, i*1000)
+//         } ;
+//         close(i);
+//     }
+// }
+// z()
+</script>

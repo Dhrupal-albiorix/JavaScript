@@ -1,0 +1,15 @@
+<script>
+    function outer() {
+        var x = 10;
+
+        function inner() {
+            console.log(x); //10
+        }
+
+        return inner;
+    }
+
+    var innerFn = outer();
+    innerFn();
+
+</script>

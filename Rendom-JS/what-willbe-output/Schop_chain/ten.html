@@ -1,0 +1,18 @@
+<script>
+    var x = 10;
+
+    function outer() {
+        console.log(x); // Output: ?undefine bcz var is reinitlized in if block
+
+        if (true) {  //var is not block scop it is function scop
+            var x = 20;
+            console.log(x); // Output: ? 20
+        }
+
+        console.log(x); // Output: ? 20
+    }
+
+    outer();
+    console.log(x); // Output: ? 10
+
+</script>

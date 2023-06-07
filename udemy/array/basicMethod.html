@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <p> array</p>
+    <p>mrthod one :
+    <p>let arr = ["one" , "two" , "three"]</p>
+    <p>method two</p>
+    <p>let arr = new arr("one" ,"two" ,"three")</p>
+
+    <p>for method one :
+        let arr = [1] will create arry with element 1'
+        <br> buy with method 2 ;
+        <br>
+        let arr = new arr(1)
+        will crate arry with 1 empty element
+    </p>
+    </p>
+    <h3>if we have array of lenth 10 and number of elements like 5-6 i.e less then length.
+        then rest of the element will be "EMPTY" and NOT undefine.
+    </h3>
+    <h3>when we want to apply some condition to array element and if it dose not find that element , then it will ne
+        undefine value</h3>
+    <h3>The empty slot is different from the undefined value, and the most important difference is that the empty slot
+        is not
+        Enumerable.</h3>
+    <h3>Since map function enumerates the values in the orriginal array and returns the array of the same length, it has
+        no
+        effect on the array of 10 empty slots.</h3>
+</body>
+
+</html>
+
+<script>
+    let arr = ["one", 2, true, "three"];
+    let arr2 = new Array("one", 2, true, "three");
+    let arr3 = [1];
+    let arr4 = new Array(1)
+    console.log(arr);
+    console.log(arr2);
+    console.log(arr3);
+    console.log(arr4);
+
+
+    // Initializing while declaring
+    // Creates an array having elements 10, 20, 30, 40, 50
+    let house = new Array(10, 20, 30, 40, 50);
+
+    // Creates an array of 5 empty elements
+    let house1 = new Array(5);
+
+    // Creates an array with element 1BHK
+    let home = new Array("1BHK");
+    console.log(house)
+    console.log(house1)
+    console.log(home)
+
+
+</script>

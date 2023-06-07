@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h6>all about varIABLE IN JS"</h6>
+    <p>A variable is a container for a value, like a number we might use in a sum,
+        or a string that we might use as part of a
+        sentence.</p>
+
+    <h4>Example </h4>
+
+    <button id="button_A">Press me with the use of variable</button>
+    <h3 id="heading_A"></h3>
+
+    <h4>Wrong way - withour variable</h4>
+    <button id="button_B2">Press me</button>
+    <h3 id="heading_B2"></h3>
+
+    <div>
+        types of variables
+        object array numbers Booleans
+    </div>
+
+    <div>
+        let var and const are not type of veriable
+        <p>they are just used to define scop either globle or local</p>
+        <p>we can assign value without using let var and const</p>
+        <p>ex :
+            <br>
+            a=15 ;
+        <p>console.log(a)</p>
+        </p>
+    </div>
+
+    <div>
+        <p>Dynamic typing
+            JavaScript is a "dynamically typed language", which means that, unlike some other languages, you don't need
+            to
+            specify
+            what data type a variable will contain (numbers, strings, arrays, etc.). </p>
+
+        <p> For example, if you declare a variable and give it a value enclosed in quotes, the browser treats the
+            variable
+            as a
+            string: </p>
+
+        <p> let myString = "Hello"; </p>
+    </div>
+
+
+
+</body>
+
+</html>
+
+<script>
+
+    const buttonA = document.querySelector("#button_A");
+    const headingA = document.querySelector("#heading_A");
+
+    buttonA.onclick = () => {
+        const name = prompt("What is your name? using variable");
+        alert(`Hello ${name}, nice to see you! using variable`);
+        headingA.textContent = `Welcome ${name} using variable`;
+    };
+
+    const buttonB2 = document.querySelector("#button_B2");
+    const headingB2 = document.querySelector("#heading_B2");
+
+    buttonB2.onclick = () => {
+        alert(`Hello ${prompt("What is your name?")}, nice to see you!`);
+        headingB2.textContent = `Welcome ${prompt("What is your name?")} asking again bcz there is no variable to store data you gave
+            so i will agin take value from prompt`;
+    };
+
+    console.log("dleclering variable");
+    let myName;
+    let myAge;
+
+
+    console.log("Initializing a variable")
+    myName = "Chris";
+    myAge = 37;
+
+    console.log("using variable");
+    console.log(myName, myAge);
+
+</script>

@@ -1,0 +1,44 @@
+<html>
+
+<head>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.9.1/underscore-min.js">
+    </script>
+</head>
+
+<body>
+
+    <div>
+        The function that is passed to the _.once() function adds 10 to the variable 10 which originally has 10 value.
+        Then the
+        _.once() function is assigned to the another function ‘startFunc()’. Then the first time the ‘startFunc()’ is
+        called the
+        value of ‘a’ is incremented by 10 and becomes 20. So the output of first time calling is 20. Then the next time
+        when
+        ‘startFunc()’ is called the value of ‘a’ is again supposed to be incremented by 10 but this does not happen.
+        This is
+        because the ‘startFunc()’ has a function ‘_.once()’ in its definition which prevents it from being executed more
+        than
+        one times. So, the output of the second and third calls will be the same as first, i.e., 20. On the first line,
+        the
+        value of ‘a’ is getting printed before calling the ‘startFunc()’ hence the output is 10.
+    </div>
+
+    <script type="text/javascript">
+        var a = 10;
+
+        function add() {
+            a += 10;
+        }
+        var startFunc = _.once(add); //op : 10 , 20 , 20 , 20
+        //  var startFunc = add; //op : 10 , 20 ,30 , 40
+        console.log(a);
+        startFunc();
+        console.log(a);
+        startFunc();
+        console.log(a);
+        startFunc();
+        console.log(a);
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,21 @@
+<script>
+    function calculateSum(n) {
+        if (n === 0) {
+            var sum = 0;
+            //let sum = 0; error in else that sum is not define bcz let and const are block scop
+        } else {
+            sum = calculateSum(n - 1) + n;
+        }
+        return sum;
+    }
+
+    console.log(calculateSum(5));
+
+</script>
+
+<!-- sum(4)+5 -->
+<!-- sum(3)+4+5 -->
+<!-- sum(2)+3+4+5 -->
+<!-- sum(1)+2+3+4+5 -->
+<!-- sum(0)+1+2+3+4+5 -->
+<!--0+1+2+3+4+5 -->

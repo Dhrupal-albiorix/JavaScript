@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Mark and John are trying to compare their BMI (Body Mass Index), which is
+        calculated using the formula:</h1>
+    <p>
+        BMI = mass / height ** 2
+    <p>= mass / (height * height) (mass in kg
+        and height in meter). </p>
+    </p>
+
+    <p>. Store Mark's and John's mass and height in variable</p>
+
+    <p>Calculate both their BMIs using the formula (you can even implement both
+        versions</p>
+    <p>Create a Boolean variable 'markHigherBMI' containing information about
+        whether Mark has a higher BMI than John</p>
+</body>
+
+</html>
+
+<script>
+
+    let M_weight = 78;
+    let M_weight2 = 95;
+    let J_weight = 92;
+    let J_weight2 = 85;
+
+    let M_height = 1.69;
+    let M_height2 = 1.88;
+    let J_height = 1.95;
+    let J_height2 = 1.76;
+
+    let M_BMI, M_BMI2, J_BMI, J_BMI2;
+
+    M_BMI = M_weight / (M_height ** 2);
+    M_BMI2 = M_weight2 / (M_height2 ** 2);
+
+    J_BMI = J_weight / (J_height ** 2);
+    J_BMI2 = J_weight2 / (J_height2 ** 2)
+
+    console.log(J_BMI, J_BMI2, M_BMI, M_BMI2);
+
+    // let markHigherBMI;
+    // if (J_BMI > M_BMI) {
+    //     markHigherBMI = false;
+    //     console.log("compare one : ", markHigherBMI)
+    // } else {
+    //     markHigherBMI = true;
+    //     console.log("compare one : ", markHigherBMI)
+    // }
+
+    // if (J_BMI2 > M_BMI2) {
+    //     markHigherBMI = false;
+    //     console.log("compare two : ", markHigherBMI)
+    // } else {
+    //     markHigherBMI = true;
+    //     console.log("compare one : ", markHigherBMI)
+    // }
+
+    let markHigherBMI = M_BMI > J_BMI;
+    console.log(markHigherBMI ?? false)
+    console.log(markHigherBMI || false)
+
+    let markHigherBMI2 = M_BMI2 > J_BMI2;
+    console.log(markHigherBMI2 ?? false)
+    console.log(markHigherBMI2 || false)
+
+</script>

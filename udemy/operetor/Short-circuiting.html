@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <p>In the previous section, we said "the higher-precedence expressions are always evaluated first" — this is
+        generally
+        true, but it has to be amended with the acknowledgement of short-circuiting, in which case an operand may not be
+        evaluated at all.
+
+        Short-circuiting is jargon for conditional evaluation. For example, in the expression a && (b + c), if a is
+        falsy, then
+        the sub-expression (b + c) will not even get evaluated, even if it is grouped and therefore has higher
+        precedence than
+        &&. We could say that the logical AND operator (&&) is "short-circuited". Along with logical AND, other
+        short-circuited
+        operators include logical OR (||), nullish coalescing (??), and optional chaining (?.).</p>
+
+</body>
+
+</html>
+
+<script>
+    function A() { console.log('called A'); return false; }
+    function B() { console.log('called B'); return false; }
+    function C() { console.log('called C'); return true; }
+
+    console.log(C() || B() && A());
+
+    // Logs:
+    // called C
+    // true
+    console.log("Only C() is evaluated, despite && having higher precedence. This does not mean that || has higher precedence in this case — it's exactly because (B() && A()) has higher precedence that causes it to be neglected as a whole")
+</script>

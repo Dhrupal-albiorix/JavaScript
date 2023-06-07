@@ -1,0 +1,28 @@
+<script>
+
+    //aerrow function dose not work with this key word in any case. even in object it will result in window object
+
+    let myfun = () => {
+        let inner = () => {
+            console.log(this) //result in window object
+        }
+
+        return inner()
+    }
+    myfun()
+
+    
+
+    let myObj = {
+        name: "xyz",
+        native: "abc",
+        year: 1999,
+        age: () => {
+            console.log(this) //window  object
+            return 2033 - this.year
+        }
+    }
+
+
+
+</script>

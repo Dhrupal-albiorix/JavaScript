@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <p>function hoisting</p>
+
+    <a href="https://www.jsmount.com/javascript-hoisting-interview-question-answers/">Must prectice</a>
+
+</body>
+
+</html>
+
+<script>
+    function parent() {
+        var hoisted = "'I m a variable";
+        function hoisted() {
+            return "I m a function";
+        }
+        return hoisted();
+    }
+    console.log(parent());
+
+       // output > Uncaught TypeError: hoisted is not a function
+</script>

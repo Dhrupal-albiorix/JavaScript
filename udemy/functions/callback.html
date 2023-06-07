@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <a href="https://www.scaler.com/topics/callback-hell-in-javascript/">Must read</a>
+</body>
+
+</html>
+
+<script>
+    //********************************************************************************************//
+    //  normally callling another function
+    // var name = 'ksdjfkljs';
+    // function myFn() {
+    //     setTimeout(() => {
+    //         name = 'adarsh';
+
+    //     })
+    // }
+    // function getName() {
+    //     console.log(name);
+    // }
+
+    // myFn();
+    // getName(); // function will run without waiting for set time out logic exicution.
+    //so heare we will get var name = 'ksdjfkljs' as result
+
+    //********************************************************************************************//
+
+    //calling function in callback
+
+    var name = 'ksdjfkljs';
+    function myFn(callback) {
+        setTimeout(() => {
+            name = 'adarsh';
+            callback() //this function will only run after logic above this call is exicuted
+            ////so heare we will get var name = 'adarsh' as result
+        })
+    }
+    function getName() {
+        console.log(name);
+    }
+    myFn(getName);//passing whole function not calling function , meaning we are passing reference to that function
+</script>

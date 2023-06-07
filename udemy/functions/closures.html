@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div>
+        <a href="https://www.javascripttutorial.net/javascript-closure/">MUST READ frist</a>
+        <a href="https://blog.angular-university.io/really-understanding-javascript-closures/">best explain</a>
+    </div>
+</body>
+
+</html>
+
+<script>
+    const counter = (function () {
+        let privateCounter = 0;
+        function changeBy(val) {
+            privateCounter += val;
+        }
+
+        return {
+            increment() {
+                changeBy(1);
+            },
+
+            decrement() {
+                changeBy(-1);
+            },
+
+            value() {
+                return privateCounter;
+            },
+        };
+    })();
+
+    console.log(counter.value()); // 0.
+
+    counter.increment();
+    counter.increment();
+    console.log(counter.value()); // 2.
+
+    counter.decrement();
+    console.log(counter.value()); // 1.
+
+</script>

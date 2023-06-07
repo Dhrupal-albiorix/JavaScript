@@ -1,0 +1,23 @@
+<script>
+    var x = 10;
+    function foo() {
+        console.log(x); // undefine
+        var x = 20;
+
+        function bar() {
+            console.log("Inner"); //"Inner"
+        }
+        bar();
+
+        console.log(x); // 20
+    }
+
+    function bar() {
+        console.log("Outer");
+    }
+
+    foo();
+    console.log(x); //10
+    bar(); //"Outer"
+
+</script>

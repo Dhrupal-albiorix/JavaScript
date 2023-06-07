@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div>
+        <ul>outPut 1 :
+            <li></li>
+        </ul>Here the problem is the following: { name: 'amy' } != { name: 'amy' }. When comparing two objects with
+        equality or
+        strict equality, JavaScript gonna compare the related internal references. Here, these two objects have the same
+        properties and the same value. But in memory, this is 2 different objects.
+    </div>
+</body>
+
+</html>
+
+<script>
+    function greet(person) {
+        if (person == { name: 'amy' }) {
+            console.log('hey amy', "op1")
+        } else {
+            console.log('hey arnold', "op1")
+        }
+    }
+    greet({ name: 'amy' })
+
+    //---------------------------------------correct method ----------------------------
+    function greet2(person2) {
+        if (person2.name === 'amy') {
+            console.log('hey amy', "op2")
+        } else {
+            console.log('hey arnold', "op2")
+        }
+
+    }
+    greet2({ name: 'amy' }) // "hey amy"
+</script>

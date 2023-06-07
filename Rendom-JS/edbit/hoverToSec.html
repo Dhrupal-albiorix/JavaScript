@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <p>Write a function that converts hours into seconds.</p>
+    <p>howManySeconds(2) ➞ 7200
+
+        howManySeconds(10) ➞ 36000
+
+        howManySeconds(24) ➞ 86400</p>
+
+    <p>Convert Minutes into Seconds</p>
+    <p>convert(5) ➞ 300
+
+        convert(3) ➞ 180
+
+        convert(2) ➞ 120</p>
+</body>
+
+</html>
+
+<script>
+    function howManySeconds(hours) {
+        return hours * 3600
+    }
+
+    console.log(howManySeconds(2))
+
+    function convert(minutes) {
+        return minutes * 60
+    }
+    console.log(convert(2))
+</script>

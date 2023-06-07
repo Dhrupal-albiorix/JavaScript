@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<style>
+    #outerMost,
+    #outerMost2 {
+        background-color: red;
+        width: 290px;
+        height: 290px;
+    }
+
+    #middle,
+    #middle2 {
+        background-color: rgb(233, 225, 4);
+        width: 190px;
+        height: 190px;
+    }
+
+    #inner,
+    #inner2 {
+        background-color: rgb(14, 128, 19);
+        width: 90px;
+        height: 90px;
+    }
+</style>
+
+<body>
+    <div id="outerMost">
+        outer most div
+
+        <div id="middle">
+            middle
+            <div id="inner">
+                inner div
+            </div>
+        </div>
+
+    </div>
+    <br><br>
+    <div id="outerMost2">
+        outer most div 2
+
+        <div id="middle2">
+            middle 2
+            <div id="inner2">
+                inner div 2
+            </div>
+        </div>
+
+    </div>
+</body>
+
+</html>
+
+<script>
+    document.getElementById("inner").addEventListener('click', function () {
+        event.stopPropagation()
+        alert("inner most div")
+    })
+    document.getElementById("middle").addEventListener('click', function () {
+        event.stopPropagation()
+        alert("middle div")
+    })
+    document.getElementById("outerMost").addEventListener('click', function () {
+        event.stopPropagation()
+        alert("outerMost div")
+    })
+
+
+
+    document.getElementById("inner2").addEventListener('click', function () {
+        alert("inner most div")
+    })
+    document.getElementById("middle2").addEventListener('click', function () {
+        alert("middle div")
+    })
+    document.getElementById("outerMost2").addEventListener('click', function () {
+        alert("outerMost div")
+    })
+</script>

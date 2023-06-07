@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <p>create event listner </p>
+    <p>remove event listner after using it</p>
+    <button id="punch" onclick="func(event)">Punch it!</button>
+</body>
+
+</html>
+
+<script>
+    let button = document.getElementById("punch");
+    function func(event) {
+        alert("Done, You've punched the button!");
+        button.disabled = true;
+        button.removeEventListener("click", func); // remove event listener
+    }
+
+
+</script>
