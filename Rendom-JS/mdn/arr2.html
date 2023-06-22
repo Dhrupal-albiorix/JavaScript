@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div>
+        Find the index of the "Eagles" item, and use that to remove the "Eagles" item.
+        Make a new array from this one, called eBirds, that contains only birds from the original array whose names
+        begin with
+        the letter "E". Note that startsWith() is a great way to check whether a string starts with a given character.
+    </div>
+</body>
+
+</html>
+
+<script>
+    const birds = ["Parrots", "Falcons", "Eagles", "Emus", "Caracaras", "Egrets"];
+
+    // let egles = birds.findIndex((i) => {
+    //     return i === "Eagles"
+    // })
+
+    console.log(egles)
+
+    const x = birds.splice(birds.findIndex((i) => {
+        return i === "Eagles"
+    }), 1);
+
+    console.log(x)
+    console.log(birds)
+    const eBirds = birds.filter(bird => bird.startsWith("E"));
+    console.log(eBirds);
+
+</script>

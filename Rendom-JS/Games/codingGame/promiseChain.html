@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div>
+        if we use promise & then method rember this points :
+        <br>
+        in then chain if privios then is not promis , it will exicute next one as normal...not as async.
+        <br>
+        ex :
+        <br>
+        we have four functions :
+        <br>
+        1) register 2) login 3) getdata
+
+        <br>
+
+        register is retun as promis and it is taking 2 sec time
+        <br>
+        we apply .then for login and again .then for gatdata and both of them are not returning promise.
+
+        <br>
+        login will take 5 sec and getadata will take 2 sec.
+
+        <br>
+        as getdata will take less time and login is not returning promise , getdata will be exicuted before login.
+
+        <br>
+        so even if we have register.then(login).then(getdata) ...still as login is not promise it will be exicuted after
+        getdata bcz getData will take less time...so <br>
+        exicution order will be register --> getdata ---> login
+
+        <br>
+        but if all functions in chain returns promis ..it will follow then chain and exicuted in that order
+
+    </div>
+</body>
+
+</html>
+
+
+
+<script>
+    var promise = job1(); //returns promis statment: "result of job 1" and pass it as data1 to then
+
+    promise
+        .then(function (data1) {
+            console.log('data1', data1);
+            return job2();
+        }) //console : data 1 , data1: taken from privous return "result of job 1" // returns job2()'s retrun promis statement : "result of job 2"
+        //and pass it to next chain as data2
+
+        .then(function (data2) {
+            console.log('data2', data2); //data2 and privos return "result of job 2"
+            return 'Hello world'; // returns simple string as promis statment as paas to next
+        })
+
+        .then(function (data3) {
+            console.log('data3', data3); // data 3 , privios promis statment : "hello word"
+        })
+        .then(function () {
+            setTimeout(function () {
+                console.log("hhehe", "1 SEC BUT NOT RETURN PROMIS")
+            }, 1000); // hey
+        })
+
+        // .then(function () {
+        //     return new Promise(function (resolve, reject) {
+        //         setTimeout(function () {
+        //             console.log("hhehe..2 SEC BUT RETURNING PROMIS")
+        //             resolve();
+        //         }, 2000);
+        //     });
+        // })
+
+        .then(function () {
+            console.log("hiii") //hill
+        })
+
+    function job1() {
+        return new Promise(function (resolve, reject) {
+            setTimeout(function () {
+                resolve('result of job 1');
+            }, 1000);
+        });
+    }
+
+    function job2() {
+        return new Promise(function (resolve, reject) {
+            setTimeout(function () {
+                resolve('result of job 2');
+            }, 1000);
+        });
+    }
+
+</script>

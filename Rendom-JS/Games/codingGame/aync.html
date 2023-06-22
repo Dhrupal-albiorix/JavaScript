@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <div>
+        The async keyword means that the function test will always return a promise. Even if the function just
+        executes a simple return 'Hello world'. It will be converted to a promise no matter what. That's why we can use
+        a then print the message.
+
+        The await keyword at line 8 means that the code execution will stop until the promise returned by job() is
+        resolved. And
+        the return value from test() is stored in the message variable.
+    </div>
+
+</body>
+
+</html>
+
+<script>
+    function job() {
+        return new Promise(function (resolve, reject) {
+            setTimeout(resolve, 500, 'Hello world 1');
+        });
+    }
+
+    async function test() {
+        let message = await job();
+        console.log(message);
+
+        return 'Hello world 2';
+    }
+
+    test().then(function (message) {
+        console.log(message);
+    });
+</script>

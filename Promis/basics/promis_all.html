@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <p>
+        typically used when there are multiple related asynchronous tasks that the overall code relies on to work
+        successfully —
+        all of whom we want to fulfill before the code execution continues.
+        <br>
+        Promise.all() will reject immediately upon any of the input promises rejecting. In comparison, the promise
+        returned by
+        Promise.allSettled() will wait for all input promises to complete, regardless of whether or not one rejects. Use
+        allSettled() if you need the final result of every promise in the input iterable.
+    </p>
+</body>
+
+</html>
+
+<script>
+    const p1 = Promise.resolve(3);
+        const p2 = 1337;
+        const p3 = new Promise((resolve, reject) => {
+            setTimeout(() => {
+                resolve("foo");
+            }, 100);
+        });
+    // const p1 = Promise.resolve(3);
+    // const p2 = 1337;
+    // const p3 = new Promise((resolve, reject) => {
+    //     setTimeout(() => {
+    //         reject("foo");
+    //     }, 100);
+    // });
+
+    Promise.all([p1, p2, p3]).then((values) => {
+        console.log(values); // [3, 1337, "foo"]
+    });
+
+</script>

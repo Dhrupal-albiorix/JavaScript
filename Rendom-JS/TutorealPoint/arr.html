@@ -1,0 +1,30 @@
+<script>
+    let a = new Array();
+    let b = new Array();
+    a[1] = 3;
+    b[2] = 5;
+
+    //now change value inside a...now a will conatain all elements of b
+    a = b;
+    console.log(a)
+    console.log(a[1], a[2]); //as in arr b no element was at index 1 but there is 5 at index 2..op will be undefine and 5
+
+    //-------------------------------------------------------------------------
+
+    let b = new Array(2, 4);
+    console.log(b) //[ 2, 4 ]
+
+    let c = new Array(11);
+    console.log(c) //[ <11 empty items> ]
+
+    //-------------------------------------------------------------------------
+
+    function myAdder(arr) {
+            arr[1]++;
+            return arr = arr + arr;
+        }
+
+        let arr1 = new Array(1, 3, 2, 5);
+        console.log(myAdder(arr1));
+        console.log(typeof (myAdder(arr1)));
+</script>

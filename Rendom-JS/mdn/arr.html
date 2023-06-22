@@ -1,0 +1,20 @@
+<script>
+
+    // Remove the last item in the array.
+    // Add two new names to the end of the array.
+    // Go over each item in the array and add its index number after the name inside parentheses, for example Ryu (0). Note that we don't teach how to do this in the Arrays article, so you'll have to do some research.
+    // Finally, join the array items together in a single string called myString, with a separator of "-".
+
+    let arr = ["acd", "bde", "ssd", "jdgj"];
+    arr.pop();
+    arr.push("lol");
+    arr.push("lol_last")
+
+    let Myarr = arr.map((i, index) => {
+        return i = i + "(" + index + ")";
+    })
+
+    console.log(Myarr)
+    let a = "-"
+    console.log(Myarr.join(a));
+</script>

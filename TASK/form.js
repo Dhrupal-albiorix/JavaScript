@@ -161,6 +161,7 @@ function deleted(i) {
 
 function searchFun() {
     let filter = document.getElementById("searchtextbox").value.toUpperCase();
+    console.log(filter)
     for (let i = 1; i < tr.length; i++) {
         let td = tr[i].getElementsByTagName('td')[1];
         if (td) {
